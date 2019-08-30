@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="shippingAddress">
+            <h2><span jhiTranslate="rsApp.shippingAddress.detail.title">Shipping Address</span> {{shippingAddress.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rsApp.shippingAddress.receiver">Receiver</span></dt>
+                <dd>
+                    <span>{{shippingAddress.receiver}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.shippingAddress.moblie">Moblie</span></dt>
+                <dd>
+                    <span>{{shippingAddress.moblie}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.shippingAddress.address">Address</span></dt>
+                <dd>
+                    <span>{{shippingAddress.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.shippingAddress.pcr">Pcr</span></dt>
+                <dd>
+                    <div *ngIf="shippingAddress.pcr">
+                        <a [routerLink]="['/pcr-rs', shippingAddress.pcr?.id, 'view']">{{shippingAddress.pcr?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="rsApp.shippingAddress.alipayUser">Alipay User</span></dt>
+                <dd>
+                    <div *ngIf="shippingAddress.alipayUser">
+                        <a [routerLink]="['/alipay-user-rs', shippingAddress.alipayUser?.id, 'view']">{{shippingAddress.alipayUser?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/shipping-address-rs', shippingAddress.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

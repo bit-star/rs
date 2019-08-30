@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="order">
+            <h2><span jhiTranslate="rsApp.order.detail.title">Order</span> {{order.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rsApp.order.orderNo" [ngbTooltip]="'rsApp.order.help.orderNo' | translate">Order No</span></dt>
+                <dd>
+                    <span>{{order.orderNo}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'rsApp.OrderStatus.' + order.status}}">{{order.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.receiver">Receiver</span></dt>
+                <dd>
+                    <span>{{order.receiver}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.mobile">Mobile</span></dt>
+                <dd>
+                    <span>{{order.mobile}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.province">Province</span></dt>
+                <dd>
+                    <span>{{order.province}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.city">City</span></dt>
+                <dd>
+                    <span>{{order.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.region">Region</span></dt>
+                <dd>
+                    <span>{{order.region}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.address">Address</span></dt>
+                <dd>
+                    <span>{{order.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.storeName">Store Name</span></dt>
+                <dd>
+                    <span>{{order.storeName}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.logisticsCompany">Logistics Company</span></dt>
+                <dd>
+                    <span>{{order.logisticsCompany}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.shipmentNumber">Shipment Number</span></dt>
+                <dd>
+                    <span>{{order.shipmentNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.paymentMethod">Payment Method</span></dt>
+                <dd>
+                    <span>{{order.paymentMethod}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.freight">Freight</span></dt>
+                <dd>
+                    <span>{{order.freight}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.description">Description</span></dt>
+                <dd>
+                    <span>{{order.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.processingOpinions">Processing Opinions</span></dt>
+                <dd>
+                    <span>{{order.processingOpinions}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.order.alipayUser">Alipay User</span></dt>
+                <dd>
+                    <div *ngIf="order.alipayUser">
+                        <a [routerLink]="['/alipay-user-rs', order.alipayUser?.id, 'view']">{{order.alipayUser?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/order-rs', order.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orderItem">
+            <h2><span jhiTranslate="rsApp.orderItem.detail.title">Order Item</span> {{orderItem.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rsApp.orderItem.unitPrice">Unit Price</span></dt>
+                <dd>
+                    <span>{{orderItem.unitPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.orderItem.actuallyPaid">Actually Paid</span></dt>
+                <dd>
+                    <span>{{orderItem.actuallyPaid}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.orderItem.rightsProtectionStatus">Rights Protection Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'rsApp.RightsProtectionStatus.' + orderItem.rightsProtectionStatus}}">{{orderItem.rightsProtectionStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.orderItem.commodity">Commodity</span></dt>
+                <dd>
+                    <div *ngIf="orderItem.commodity">
+                        <a [routerLink]="['/commodity-rs', orderItem.commodity?.id, 'view']">{{orderItem.commodity?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="rsApp.orderItem.order">Order</span></dt>
+                <dd>
+                    <div *ngIf="orderItem.order">
+                        <a [routerLink]="['/order-rs', orderItem.order?.id, 'view']">{{orderItem.order?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/order-item-rs', orderItem.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

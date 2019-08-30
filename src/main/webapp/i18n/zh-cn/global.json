@@ -7,6 +7,16 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "数据",
+        "shippingAddressRs": "Shipping Address",
+        "pcrRs": "Pcr",
+        "commodityRs": "Commodity",
+        "photoRs": "Photo",
+        "specificationRs": "Specification",
+        "orderRs": "Order",
+        "orderItemRs": "Order Item",
+        "itemLeaseCycleRs": "Item Lease Cycle",
+        "alipayUserRs": "Alipay User",
+        "tagRs": "Tag",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

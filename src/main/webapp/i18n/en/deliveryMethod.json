@@ -1,0 +1,9 @@
+{
+  "rsApp": {
+    "DeliveryMethod": {
+      "null": "",
+      "ExpressDelivery": "ExpressDelivery",
+      "PickUp": "PickUp"
+    }
+  }
+}

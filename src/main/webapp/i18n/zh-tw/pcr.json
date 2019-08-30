@@ -1,0 +1,29 @@
+{
+  "rsApp": {
+    "pcr": {
+      "home": {
+        "title": "Pcrs",
+        "createLabel": "建立一筆新的 Pcr",
+        "createOrEditLabel": "建立或編輯 Pcr",
+        "notFound": "No Pcrs found"
+      },
+      "created": "新的 Pcr 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Pcr 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Pcr 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Pcr {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Pcr"
+      },
+      "name": "Name",
+      "parentId": "Parent Id",
+      "alias": "Alias",
+      "level": "Level",
+      "phoneAreaCode": "Phone Area Code",
+      "zip": "Zip",
+      "pinyin": "Pinyin",
+      "shippingAddress": "Shipping Address"
+    }
+  }
+}

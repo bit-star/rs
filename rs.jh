@@ -1,0 +1,197 @@
+
+// an ignored comment
+/** not an ignored comment */
+entity ShippingAddress {
+	receiver String,
+	moblie String,
+	address String
+}
+/** 省市区 */
+entity Pcr {
+    name String,
+    parentId Long,
+    alias String,
+    level Long,
+    phoneAreaCode String,
+    zip Long,
+    pinyin String
+}
+
+entity Commodity {
+	name String,
+    remark String,
+    dayRent BigDecimal,
+    weeklyRent BigDecimal,
+    monthlyRent BigDecimal
+    deposit BigDecimal,
+    rentalMethod String,
+    maxRent BigDecimal,
+    inventory Long,
+    deliveryMethod DeliveryMethod,
+    status CommodityStatus,
+    leaseMustRead String,
+    desciption String
+    // 1-* Photo
+    // 1-* Specification
+    
+}
+
+entity Photo {
+  originalImage String,
+  thumbnail String,
+  width Long,
+  height Long
+}
+
+entity Specification {
+	name String,
+    value String
+}
+
+entity Order {
+	/**
+	* 订单编号
+	*/
+	orderNo String,
+    status OrderStatus,
+    receiver String,
+    mobile String,
+    province String,
+    city String,
+    region String,
+    address String,
+    storeName String,
+    logisticsCompany String,
+    shipmentNumber String,
+    paymentMethod String,
+    freight BigDecimal,
+    description String,
+    processingOpinions String
+    // 1-* OrderItem
+}
+
+
+entity OrderItem{
+	unitPrice BigDecimal,
+    actuallyPaid BigDecimal,
+    rightsProtectionStatus  RightsProtectionStatus
+    // 1-* LeaseCycle
+    // *-1 Commodity
+}
+
+
+
+entity ItemLeaseCycle {
+	name String,
+    startTime Instant,
+    endTime Instant,
+    inventory Long,
+    numberOfPeriods Long,
+    deposit BigDecimal,
+    creditExemption BigDecimal,
+    rentReceivedNumberOfPeriods Long,
+    debitedAmount BigDecimal,
+    nextBillDay Instant,
+}
+
+entity AlipayUser{
+ 	userId String ,
+    avatar String,
+    nickName String ,
+    mobile String,
+    gender String,
+    countryCode String,
+    province String,
+    city String,
+    accessToken String,
+    alipayUserId String ,
+    authTokenType String ,
+    expiresIn String ,
+    reExpiresIn String ,
+    refreshToken String 
+    // 1-* Order
+    // 1- * ShippingAddress
+}
+
+enum RightsProtectionStatus{
+Normal, Objection
+}
+
+enum OrderStatus {
+    //待付款
+    PendingPayment,
+    //已支付，确认中
+    PendingConfirming,
+    //备货中
+    Stocking,
+    //已发货
+    Shipped,
+    //已送达
+    Arrived,
+    //待归还
+    ToBeReturned,
+    //归还中
+    Returning,
+    //已完成
+    Completed,
+    //已到期
+    BeExpired,
+    //已买断
+    HasBoughtOut,
+    //已关闭
+    Closed
+    
+}
+
+
+
+
+enum CommodityStatus {
+    OnLine, OffLine
+}
+
+enum DeliveryMethod {
+    ExpressDelivery, PickUp
+}
+
+entity Tag{
+	name String,
+    icon String,
+    remark String
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	AlipayUser to Order,
+
+	Order  to OrderItem,
+    
+	OrderItem to ItemLeaseCycle,
+    
+    AlipayUser to ShippingAddress,
+    
+    Commodity to Photo,
+    
+    Commodity to Specification,
+    
+    Commodity to Tag
+}
+
+relationship ManyToOne {
+	OrderItem to Commodity,
+    ShippingAddress to Pcr
+}
+
+
+
+
+paginate * with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceClass 
+
+// Set an angular suffix
+angularSuffix * with rs

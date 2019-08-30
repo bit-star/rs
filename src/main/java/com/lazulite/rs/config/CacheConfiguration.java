@@ -43,6 +43,25 @@ public class CacheConfiguration {
             createCache(cm, com.lazulite.rs.domain.User.class.getName());
             createCache(cm, com.lazulite.rs.domain.Authority.class.getName());
             createCache(cm, com.lazulite.rs.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.lazulite.rs.domain.ShippingAddress.class.getName());
+            createCache(cm, com.lazulite.rs.domain.Pcr.class.getName());
+            createCache(cm, com.lazulite.rs.domain.Pcr.class.getName() + ".shippingAddresses");
+            createCache(cm, com.lazulite.rs.domain.Commodity.class.getName());
+            createCache(cm, com.lazulite.rs.domain.Commodity.class.getName() + ".photos");
+            createCache(cm, com.lazulite.rs.domain.Commodity.class.getName() + ".specifications");
+            createCache(cm, com.lazulite.rs.domain.Commodity.class.getName() + ".tags");
+            createCache(cm, com.lazulite.rs.domain.Commodity.class.getName() + ".orderItems");
+            createCache(cm, com.lazulite.rs.domain.Photo.class.getName());
+            createCache(cm, com.lazulite.rs.domain.Specification.class.getName());
+            createCache(cm, com.lazulite.rs.domain.Order.class.getName());
+            createCache(cm, com.lazulite.rs.domain.Order.class.getName() + ".orderItems");
+            createCache(cm, com.lazulite.rs.domain.OrderItem.class.getName());
+            createCache(cm, com.lazulite.rs.domain.OrderItem.class.getName() + ".itemLeaseCycles");
+            createCache(cm, com.lazulite.rs.domain.ItemLeaseCycle.class.getName());
+            createCache(cm, com.lazulite.rs.domain.AlipayUser.class.getName());
+            createCache(cm, com.lazulite.rs.domain.AlipayUser.class.getName() + ".orders");
+            createCache(cm, com.lazulite.rs.domain.AlipayUser.class.getName() + ".shippingAddresses");
+            createCache(cm, com.lazulite.rs.domain.Tag.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

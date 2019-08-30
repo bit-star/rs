@@ -1,0 +1,44 @@
+{
+    "name": "ShippingAddress",
+    "fields": [
+        {
+            "fieldName": "receiver",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "moblie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "pcr",
+            "otherEntityRelationshipName": "shippingAddress",
+            "relationshipName": "pcr",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "alipayUser",
+            "otherEntityRelationshipName": "shippingAddress",
+            "relationshipName": "alipayUser",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190830055030",
+    "javadoc": "not an ignored comment",
+    "entityTableName": "shipping_address",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "rs"
+}

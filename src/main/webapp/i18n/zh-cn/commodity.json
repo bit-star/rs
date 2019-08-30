@@ -1,0 +1,38 @@
+{
+  "rsApp": {
+    "commodity": {
+      "home": {
+        "title": "Commodities",
+        "createLabel": "创建新 Commodity",
+        "createOrEditLabel": "创建或编辑 Commodity",
+        "notFound": "No Commodities found"
+      },
+      "created": "Commodity {{ param }} 创建成功",
+      "updated": "Commodity {{ param }} 更新成功",
+      "deleted": "Commodity {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Commodity {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Commodity"
+      },
+      "name": "Name",
+      "remark": "Remark",
+      "dayRent": "Day Rent",
+      "weeklyRent": "Weekly Rent",
+      "monthlyRent": "Monthly Rent",
+      "deposit": "Deposit",
+      "rentalMethod": "Rental Method",
+      "maxRent": "Max Rent",
+      "inventory": "Inventory",
+      "deliveryMethod": "Delivery Method",
+      "status": "Status",
+      "leaseMustRead": "Lease Must Read",
+      "desciption": "Desciption",
+      "photo": "Photo",
+      "specification": "Specification",
+      "tag": "Tag",
+      "orderItem": "Order Item"
+    }
+  }
+}
