@@ -1,0 +1,52 @@
+{
+    "name": "Pcr",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "parentId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "alias",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "level",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "phoneAreaCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "zip",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "pinyin",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "shippingAddress",
+            "otherEntityRelationshipName": "pcr",
+            "relationshipName": "shippingAddress"
+        }
+    ],
+    "changelogDate": "20190830055031",
+    "javadoc": "省市区",
+    "entityTableName": "pcr",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "rs"
+}

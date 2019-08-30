@@ -1,0 +1,9 @@
+{
+  "rsApp": {
+    "CommodityStatus": {
+      "null": "",
+      "OnLine": "OnLine",
+      "OffLine": "OffLine"
+    }
+  }
+}

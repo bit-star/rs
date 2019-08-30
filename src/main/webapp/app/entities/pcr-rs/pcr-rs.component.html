@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="rsApp.pcr.home.title">Pcrs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pcr-rs" [routerLink]="['/pcr-rs/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="rsApp.pcr.home.createLabel">
+            Create a new Pcr
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="pcrs?.length === 0">
+        <span jhiTranslate="rsApp.pcr.home.notFound">No pcrs found</span>
+    </div>
+    <div class="table-responsive" *ngIf="pcrs?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="name"><span jhiTranslate="rsApp.pcr.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="parentId"><span jhiTranslate="rsApp.pcr.parentId">Parent Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="alias"><span jhiTranslate="rsApp.pcr.alias">Alias</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="level"><span jhiTranslate="rsApp.pcr.level">Level</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="phoneAreaCode"><span jhiTranslate="rsApp.pcr.phoneAreaCode">Phone Area Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="zip"><span jhiTranslate="rsApp.pcr.zip">Zip</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="pinyin"><span jhiTranslate="rsApp.pcr.pinyin">Pinyin</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let pcr of pcrs ;trackBy: trackId">
+                <td><a [routerLink]="['/pcr-rs', pcr.id, 'view' ]">{{pcr.id}}</a></td>
+                <td>{{pcr.name}}</td>
+                <td>{{pcr.parentId}}</td>
+                <td>{{pcr.alias}}</td>
+                <td>{{pcr.level}}</td>
+                <td>{{pcr.phoneAreaCode}}</td>
+                <td>{{pcr.zip}}</td>
+                <td>{{pcr.pinyin}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/pcr-rs', pcr.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/pcr-rs', pcr.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/pcr-rs', { outlets: { popup: pcr.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="pcrs?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

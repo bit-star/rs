@@ -1,0 +1,85 @@
+{
+    "name": "AlipayUser",
+    "fields": [
+        {
+            "fieldName": "userId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "avatar",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nickName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mobile",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "countryCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "province",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accessToken",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "alipayUserId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "authTokenType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "expiresIn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reExpiresIn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "refreshToken",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "order",
+            "otherEntityRelationshipName": "alipayUser",
+            "relationshipName": "order"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "shippingAddress",
+            "otherEntityRelationshipName": "alipayUser",
+            "relationshipName": "shippingAddress"
+        }
+    ],
+    "changelogDate": "20190830055038",
+    "entityTableName": "alipay_user",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "rs"
+}

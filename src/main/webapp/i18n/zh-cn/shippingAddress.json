@@ -1,0 +1,26 @@
+{
+  "rsApp": {
+    "shippingAddress": {
+      "home": {
+        "title": "Shipping Addresses",
+        "createLabel": "创建新 Shipping Address",
+        "createOrEditLabel": "创建或编辑 Shipping Address",
+        "notFound": "No Shipping Addresses found"
+      },
+      "created": "Shipping Address {{ param }} 创建成功",
+      "updated": "Shipping Address {{ param }} 更新成功",
+      "deleted": "Shipping Address {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Shipping Address {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Shipping Address"
+      },
+      "receiver": "Receiver",
+      "moblie": "Moblie",
+      "address": "Address",
+      "pcr": "Pcr",
+      "alipayUser": "Alipay User"
+    }
+  }
+}

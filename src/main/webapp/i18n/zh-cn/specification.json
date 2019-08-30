@@ -1,0 +1,24 @@
+{
+  "rsApp": {
+    "specification": {
+      "home": {
+        "title": "Specifications",
+        "createLabel": "创建新 Specification",
+        "createOrEditLabel": "创建或编辑 Specification",
+        "notFound": "No Specifications found"
+      },
+      "created": "Specification {{ param }} 创建成功",
+      "updated": "Specification {{ param }} 更新成功",
+      "deleted": "Specification {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Specification {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Specification"
+      },
+      "name": "Name",
+      "value": "Value",
+      "commodity": "Commodity"
+    }
+  }
+}

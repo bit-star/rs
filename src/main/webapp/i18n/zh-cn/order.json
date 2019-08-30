@@ -1,0 +1,41 @@
+{
+  "rsApp": {
+    "order": {
+      "home": {
+        "title": "Orders",
+        "createLabel": "创建新 Order",
+        "createOrEditLabel": "创建或编辑 Order",
+        "notFound": "No Orders found"
+      },
+      "created": "Order {{ param }} 创建成功",
+      "updated": "Order {{ param }} 更新成功",
+      "deleted": "Order {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Order {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Order"
+      },
+      "orderNo": "Order No",
+      "status": "Status",
+      "receiver": "Receiver",
+      "mobile": "Mobile",
+      "province": "Province",
+      "city": "City",
+      "region": "Region",
+      "address": "Address",
+      "storeName": "Store Name",
+      "logisticsCompany": "Logistics Company",
+      "shipmentNumber": "Shipment Number",
+      "paymentMethod": "Payment Method",
+      "freight": "Freight",
+      "description": "Description",
+      "processingOpinions": "Processing Opinions",
+      "orderItem": "Order Item",
+      "alipayUser": "Alipay User",
+      "help": {
+        "orderNo": "订单编号"
+      }
+    }
+  }
+}

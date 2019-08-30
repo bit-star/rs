@@ -1,0 +1,29 @@
+{
+  "rsApp": {
+    "pcr": {
+      "home": {
+        "title": "Pcrs",
+        "createLabel": "Create a new Pcr",
+        "createOrEditLabel": "Create or edit a Pcr",
+        "notFound": "No Pcrs found"
+      },
+      "created": "A new Pcr is created with identifier {{ param }}",
+      "updated": "A Pcr is updated with identifier {{ param }}",
+      "deleted": "A Pcr is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pcr {{ id }}?"
+      },
+      "detail": {
+        "title": "Pcr"
+      },
+      "name": "Name",
+      "parentId": "Parent Id",
+      "alias": "Alias",
+      "level": "Level",
+      "phoneAreaCode": "Phone Area Code",
+      "zip": "Zip",
+      "pinyin": "Pinyin",
+      "shippingAddress": "Shipping Address"
+    }
+  }
+}

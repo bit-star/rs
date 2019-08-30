@@ -1,0 +1,92 @@
+{
+    "name": "Order",
+    "fields": [
+        {
+            "fieldName": "orderNo",
+            "javadoc": "订单编号",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "OrderStatus",
+            "fieldValues": "PendingPayment,PendingConfirming,Stocking,Shipped,Arrived,ToBeReturned,Returning,Completed,BeExpired,HasBoughtOut,Closed"
+        },
+        {
+            "fieldName": "receiver",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mobile",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "province",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "region",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "storeName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "logisticsCompany",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shipmentNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentMethod",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "freight",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "processingOpinions",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "orderItem",
+            "otherEntityRelationshipName": "order",
+            "relationshipName": "orderItem"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "alipayUser",
+            "otherEntityRelationshipName": "order",
+            "relationshipName": "alipayUser",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190830055035",
+    "entityTableName": "order",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "rs"
+}
