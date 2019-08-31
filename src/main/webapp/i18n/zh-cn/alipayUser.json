@@ -27,6 +27,7 @@
       "accessToken": "Access Token",
       "authTokenType": "Auth Token Type",
       "expiresIn": "Expires In",
+      "alipayUserId": "Alipay User Id",
       "reExpiresIn": "Re Expires In",
       "refreshToken": "Refresh Token",
       "order": "Order",

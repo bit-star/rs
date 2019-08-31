@@ -46,6 +46,10 @@
             "fieldType": "String"
         },
         {
+            "fieldName": "alipayUserId",
+            "fieldType": "String"
+        },
+        {
             "fieldName": "reExpiresIn",
             "fieldType": "String"
         },

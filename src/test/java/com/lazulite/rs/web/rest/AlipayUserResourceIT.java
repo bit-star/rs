@@ -67,6 +67,9 @@ public class AlipayUserResourceIT {
     private static final String DEFAULT_EXPIRES_IN = "AAAAAAAAAA";
     private static final String UPDATED_EXPIRES_IN = "BBBBBBBBBB";
 
+    private static final String DEFAULT_ALIPAY_USER_ID = "AAAAAAAAAA";
+    private static final String UPDATED_ALIPAY_USER_ID = "BBBBBBBBBB";
+
     private static final String DEFAULT_RE_EXPIRES_IN = "AAAAAAAAAA";
     private static final String UPDATED_RE_EXPIRES_IN = "BBBBBBBBBB";
 
@@ -129,6 +132,7 @@ public class AlipayUserResourceIT {
             .accessToken(DEFAULT_ACCESS_TOKEN)
             .authTokenType(DEFAULT_AUTH_TOKEN_TYPE)
             .expiresIn(DEFAULT_EXPIRES_IN)
+            .alipayUserId(DEFAULT_ALIPAY_USER_ID)
             .reExpiresIn(DEFAULT_RE_EXPIRES_IN)
             .refreshToken(DEFAULT_REFRESH_TOKEN);
         return alipayUser;
@@ -152,6 +156,7 @@ public class AlipayUserResourceIT {
             .accessToken(UPDATED_ACCESS_TOKEN)
             .authTokenType(UPDATED_AUTH_TOKEN_TYPE)
             .expiresIn(UPDATED_EXPIRES_IN)
+            .alipayUserId(UPDATED_ALIPAY_USER_ID)
             .reExpiresIn(UPDATED_RE_EXPIRES_IN)
             .refreshToken(UPDATED_REFRESH_TOKEN);
         return alipayUser;
@@ -188,6 +193,7 @@ public class AlipayUserResourceIT {
         assertThat(testAlipayUser.getAccessToken()).isEqualTo(DEFAULT_ACCESS_TOKEN);
         assertThat(testAlipayUser.getAuthTokenType()).isEqualTo(DEFAULT_AUTH_TOKEN_TYPE);
         assertThat(testAlipayUser.getExpiresIn()).isEqualTo(DEFAULT_EXPIRES_IN);
+        assertThat(testAlipayUser.getAlipayUserId()).isEqualTo(DEFAULT_ALIPAY_USER_ID);
         assertThat(testAlipayUser.getReExpiresIn()).isEqualTo(DEFAULT_RE_EXPIRES_IN);
         assertThat(testAlipayUser.getRefreshToken()).isEqualTo(DEFAULT_REFRESH_TOKEN);
     }
@@ -234,6 +240,7 @@ public class AlipayUserResourceIT {
             .andExpect(jsonPath("$.[*].accessToken").value(hasItem(DEFAULT_ACCESS_TOKEN.toString())))
             .andExpect(jsonPath("$.[*].authTokenType").value(hasItem(DEFAULT_AUTH_TOKEN_TYPE.toString())))
             .andExpect(jsonPath("$.[*].expiresIn").value(hasItem(DEFAULT_EXPIRES_IN.toString())))
+            .andExpect(jsonPath("$.[*].alipayUserId").value(hasItem(DEFAULT_ALIPAY_USER_ID.toString())))
             .andExpect(jsonPath("$.[*].reExpiresIn").value(hasItem(DEFAULT_RE_EXPIRES_IN.toString())))
             .andExpect(jsonPath("$.[*].refreshToken").value(hasItem(DEFAULT_REFRESH_TOKEN.toString())));
     }
@@ -260,6 +267,7 @@ public class AlipayUserResourceIT {
             .andExpect(jsonPath("$.accessToken").value(DEFAULT_ACCESS_TOKEN.toString()))
             .andExpect(jsonPath("$.authTokenType").value(DEFAULT_AUTH_TOKEN_TYPE.toString()))
             .andExpect(jsonPath("$.expiresIn").value(DEFAULT_EXPIRES_IN.toString()))
+            .andExpect(jsonPath("$.alipayUserId").value(DEFAULT_ALIPAY_USER_ID.toString()))
             .andExpect(jsonPath("$.reExpiresIn").value(DEFAULT_RE_EXPIRES_IN.toString()))
             .andExpect(jsonPath("$.refreshToken").value(DEFAULT_REFRESH_TOKEN.toString()));
     }
@@ -296,6 +304,7 @@ public class AlipayUserResourceIT {
             .accessToken(UPDATED_ACCESS_TOKEN)
             .authTokenType(UPDATED_AUTH_TOKEN_TYPE)
             .expiresIn(UPDATED_EXPIRES_IN)
+            .alipayUserId(UPDATED_ALIPAY_USER_ID)
             .reExpiresIn(UPDATED_RE_EXPIRES_IN)
             .refreshToken(UPDATED_REFRESH_TOKEN);
 
@@ -319,6 +328,7 @@ public class AlipayUserResourceIT {
         assertThat(testAlipayUser.getAccessToken()).isEqualTo(UPDATED_ACCESS_TOKEN);
         assertThat(testAlipayUser.getAuthTokenType()).isEqualTo(UPDATED_AUTH_TOKEN_TYPE);
         assertThat(testAlipayUser.getExpiresIn()).isEqualTo(UPDATED_EXPIRES_IN);
+        assertThat(testAlipayUser.getAlipayUserId()).isEqualTo(UPDATED_ALIPAY_USER_ID);
         assertThat(testAlipayUser.getReExpiresIn()).isEqualTo(UPDATED_RE_EXPIRES_IN);
         assertThat(testAlipayUser.getRefreshToken()).isEqualTo(UPDATED_REFRESH_TOKEN);
     }

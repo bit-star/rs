@@ -26,6 +26,7 @@ export class AlipayUserRsUpdateComponent implements OnInit {
     accessToken: [],
     authTokenType: [],
     expiresIn: [],
+    alipayUserId: [],
     reExpiresIn: [],
     refreshToken: []
   });
@@ -53,6 +54,7 @@ export class AlipayUserRsUpdateComponent implements OnInit {
       accessToken: alipayUser.accessToken,
       authTokenType: alipayUser.authTokenType,
       expiresIn: alipayUser.expiresIn,
+      alipayUserId: alipayUser.alipayUserId,
       reExpiresIn: alipayUser.reExpiresIn,
       refreshToken: alipayUser.refreshToken
     });
@@ -87,6 +89,7 @@ export class AlipayUserRsUpdateComponent implements OnInit {
       accessToken: this.editForm.get(['accessToken']).value,
       authTokenType: this.editForm.get(['authTokenType']).value,
       expiresIn: this.editForm.get(['expiresIn']).value,
+      alipayUserId: this.editForm.get(['alipayUserId']).value,
       reExpiresIn: this.editForm.get(['reExpiresIn']).value,
       refreshToken: this.editForm.get(['refreshToken']).value
     };

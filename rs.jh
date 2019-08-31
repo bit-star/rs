@@ -112,6 +112,7 @@ entity AlipayUser{
     accessToken String,
     authTokenType String ,
     expiresIn String ,
+    alipayUserId String,
     reExpiresIn String ,
     refreshToken String 
     // 1-* Order
