@@ -55,6 +55,9 @@ public class AlipayUser implements Serializable {
     @Column(name = "expires_in")
     private String expiresIn;
 
+    @Column(name = "alipay_user_id")
+    private String alipayUserId;
+
     @Column(name = "re_expires_in")
     private String reExpiresIn;
 
@@ -221,6 +224,19 @@ public class AlipayUser implements Serializable {
         this.expiresIn = expiresIn;
     }
 
+    public String getAlipayUserId() {
+        return alipayUserId;
+    }
+
+    public AlipayUser alipayUserId(String alipayUserId) {
+        this.alipayUserId = alipayUserId;
+        return this;
+    }
+
+    public void setAlipayUserId(String alipayUserId) {
+        this.alipayUserId = alipayUserId;
+    }
+
     public String getReExpiresIn() {
         return reExpiresIn;
     }
@@ -329,6 +345,7 @@ public class AlipayUser implements Serializable {
             ", accessToken='" + getAccessToken() + "'" +
             ", authTokenType='" + getAuthTokenType() + "'" +
             ", expiresIn='" + getExpiresIn() + "'" +
+            ", alipayUserId='" + getAlipayUserId() + "'" +
             ", reExpiresIn='" + getReExpiresIn() + "'" +
             ", refreshToken='" + getRefreshToken() + "'" +
             "}";

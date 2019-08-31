@@ -37,6 +37,7 @@ describe('Service Tests', () => {
         'AAAAAAA',
         'AAAAAAA',
         'AAAAAAA',
+        'AAAAAAA',
         'AAAAAAA'
       );
     });
@@ -85,6 +86,7 @@ describe('Service Tests', () => {
             accessToken: 'BBBBBB',
             authTokenType: 'BBBBBB',
             expiresIn: 'BBBBBB',
+            alipayUserId: 'BBBBBB',
             reExpiresIn: 'BBBBBB',
             refreshToken: 'BBBBBB'
           },
@@ -115,6 +117,7 @@ describe('Service Tests', () => {
             accessToken: 'BBBBBB',
             authTokenType: 'BBBBBB',
             expiresIn: 'BBBBBB',
+            alipayUserId: 'BBBBBB',
             reExpiresIn: 'BBBBBB',
             refreshToken: 'BBBBBB'
           },

@@ -14,6 +14,7 @@ export interface IAlipayUserRs {
   accessToken?: string;
   authTokenType?: string;
   expiresIn?: string;
+  alipayUserId?: string;
   reExpiresIn?: string;
   refreshToken?: string;
   orders?: IOrderRs[];
@@ -34,6 +35,7 @@ export class AlipayUserRs implements IAlipayUserRs {
     public accessToken?: string,
     public authTokenType?: string,
     public expiresIn?: string,
+    public alipayUserId?: string,
     public reExpiresIn?: string,
     public refreshToken?: string,
     public orders?: IOrderRs[],
