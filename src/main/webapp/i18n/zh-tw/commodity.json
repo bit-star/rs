@@ -32,6 +32,7 @@
       "photo": "Photo",
       "specification": "Specification",
       "tag": "Tag",
+      "category": "Category",
       "orderItem": "Order Item"
     }
   }

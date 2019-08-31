@@ -1,6 +1,7 @@
 import { IPhotoRs } from 'app/shared/model/photo-rs.model';
 import { ISpecificationRs } from 'app/shared/model/specification-rs.model';
 import { ITagRs } from 'app/shared/model/tag-rs.model';
+import { ICategoryRs } from 'app/shared/model/category-rs.model';
 import { IOrderItemRs } from 'app/shared/model/order-item-rs.model';
 
 export const enum DeliveryMethod {
@@ -31,6 +32,7 @@ export interface ICommodityRs {
   photos?: IPhotoRs[];
   specifications?: ISpecificationRs[];
   tags?: ITagRs[];
+  category?: ICategoryRs;
   orderItems?: IOrderItemRs[];
 }
 
@@ -53,6 +55,7 @@ export class CommodityRs implements ICommodityRs {
     public photos?: IPhotoRs[],
     public specifications?: ISpecificationRs[],
     public tags?: ITagRs[],
+    public category?: ICategoryRs,
     public orderItems?: IOrderItemRs[]
   ) {}
 }

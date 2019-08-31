@@ -57,6 +57,12 @@
                 <dd>
                     <span>{{commodity.desciption}}</span>
                 </dd>
+                <dt><span jhiTranslate="rsApp.commodity.category">Category</span></dt>
+                <dd>
+                    <div *ngIf="commodity.category">
+                        <a [routerLink]="['/category-rs', commodity.category?.id, 'view']">{{commodity.category?.id}}</a>
+                    </div>
+                </dd>
             </dl>
 
             <button type="submit"

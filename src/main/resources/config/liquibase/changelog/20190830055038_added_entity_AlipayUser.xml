@@ -52,10 +52,6 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="alipay_user_id" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
             <column name="auth_token_type" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -105,7 +101,6 @@
             <column name="province" type="string"/>
             <column name="city" type="string"/>
             <column name="access_token" type="string"/>
-            <column name="alipay_user_id" type="string"/>
             <column name="auth_token_type" type="string"/>
             <column name="expires_in" type="string"/>
             <column name="re_expires_in" type="string"/>

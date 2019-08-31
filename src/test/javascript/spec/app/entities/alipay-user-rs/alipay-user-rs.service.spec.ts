@@ -37,7 +37,6 @@ describe('Service Tests', () => {
         'AAAAAAA',
         'AAAAAAA',
         'AAAAAAA',
-        'AAAAAAA',
         'AAAAAAA'
       );
     });
@@ -84,7 +83,6 @@ describe('Service Tests', () => {
             province: 'BBBBBB',
             city: 'BBBBBB',
             accessToken: 'BBBBBB',
-            alipayUserId: 'BBBBBB',
             authTokenType: 'BBBBBB',
             expiresIn: 'BBBBBB',
             reExpiresIn: 'BBBBBB',
@@ -115,7 +113,6 @@ describe('Service Tests', () => {
             province: 'BBBBBB',
             city: 'BBBBBB',
             accessToken: 'BBBBBB',
-            alipayUserId: 'BBBBBB',
             authTokenType: 'BBBBBB',
             expiresIn: 'BBBBBB',
             reExpiresIn: 'BBBBBB',
