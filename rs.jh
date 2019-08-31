@@ -33,7 +33,13 @@ entity Commodity {
     desciption String
     // 1-* Photo
     // 1-* Specification
+    // * -1 Category
     
+}
+
+entity Category{
+	name String
+    order Long
 }
 
 entity Photo {
@@ -104,7 +110,6 @@ entity AlipayUser{
     province String,
     city String,
     accessToken String,
-    alipayUserId String ,
     authTokenType String ,
     expiresIn String ,
     reExpiresIn String ,
@@ -179,7 +184,8 @@ relationship OneToMany {
 
 relationship ManyToOne {
 	OrderItem to Commodity,
-    ShippingAddress to Pcr
+    ShippingAddress to Pcr,
+    Commodity to Category
 }
 
 
