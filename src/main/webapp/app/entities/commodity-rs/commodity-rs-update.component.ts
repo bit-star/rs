@@ -3,8 +3,12 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { JhiAlertService } from 'ng-jhipster';
 import { ICommodityRs, CommodityRs } from 'app/shared/model/commodity-rs.model';
 import { CommodityRsService } from './commodity-rs.service';
+import { ICategoryRs } from 'app/shared/model/category-rs.model';
+import { CategoryRsService } from 'app/entities/category-rs';
 
 @Component({
   selector: 'jhi-commodity-rs-update',
@@ -12,6 +16,8 @@ import { CommodityRsService } from './commodity-rs.service';
 })
 export class CommodityRsUpdateComponent implements OnInit {
   isSaving: boolean;
+
+  categories: ICategoryRs[];
 
   editForm = this.fb.group({
     id: [],
@@ -27,16 +33,30 @@ export class CommodityRsUpdateComponent implements OnInit {
     deliveryMethod: [],
     status: [],
     leaseMustRead: [],
-    desciption: []
+    desciption: [],
+    category: []
   });
 
-  constructor(protected commodityService: CommodityRsService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
+  constructor(
+    protected jhiAlertService: JhiAlertService,
+    protected commodityService: CommodityRsService,
+    protected categoryService: CategoryRsService,
+    protected activatedRoute: ActivatedRoute,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit() {
     this.isSaving = false;
     this.activatedRoute.data.subscribe(({ commodity }) => {
       this.updateForm(commodity);
     });
+    this.categoryService
+      .query()
+      .pipe(
+        filter((mayBeOk: HttpResponse<ICategoryRs[]>) => mayBeOk.ok),
+        map((response: HttpResponse<ICategoryRs[]>) => response.body)
+      )
+      .subscribe((res: ICategoryRs[]) => (this.categories = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(commodity: ICommodityRs) {
@@ -54,7 +74,8 @@ export class CommodityRsUpdateComponent implements OnInit {
       deliveryMethod: commodity.deliveryMethod,
       status: commodity.status,
       leaseMustRead: commodity.leaseMustRead,
-      desciption: commodity.desciption
+      desciption: commodity.desciption,
+      category: commodity.category
     });
   }
 
@@ -88,7 +109,8 @@ export class CommodityRsUpdateComponent implements OnInit {
       deliveryMethod: this.editForm.get(['deliveryMethod']).value,
       status: this.editForm.get(['status']).value,
       leaseMustRead: this.editForm.get(['leaseMustRead']).value,
-      desciption: this.editForm.get(['desciption']).value
+      desciption: this.editForm.get(['desciption']).value,
+      category: this.editForm.get(['category']).value
     };
   }
 
@@ -103,5 +125,12 @@ export class CommodityRsUpdateComponent implements OnInit {
 
   protected onSaveError() {
     this.isSaving = false;
+  }
+  protected onError(errorMessage: string) {
+    this.jhiAlertService.error(errorMessage, null, null);
+  }
+
+  trackCategoryById(index: number, item: ICategoryRs) {
+    return item.id;
   }
 }

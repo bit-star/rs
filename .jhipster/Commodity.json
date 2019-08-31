@@ -76,6 +76,13 @@
             "relationshipName": "tag"
         },
         {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "category",
+            "otherEntityRelationshipName": "commodity",
+            "relationshipName": "category",
+            "otherEntityField": "id"
+        },
+        {
             "relationshipType": "one-to-many",
             "otherEntityName": "orderItem",
             "otherEntityRelationshipName": "commodity",

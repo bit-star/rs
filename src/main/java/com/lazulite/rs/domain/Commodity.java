@@ -1,4 +1,5 @@
 package com.lazulite.rs.domain;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -79,6 +80,10 @@ public class Commodity implements Serializable {
     @OneToMany(mappedBy = "commodity")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Tag> tags = new HashSet<>();
+
+    @ManyToOne
+    @JsonIgnoreProperties("commodities")
+    private Category category;
 
     @OneToMany(mappedBy = "commodity")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -335,6 +340,19 @@ public class Commodity implements Serializable {
 
     public void setTags(Set<Tag> tags) {
         this.tags = tags;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public Commodity category(Category category) {
+        this.category = category;
+        return this;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public Set<OrderItem> getOrderItems() {

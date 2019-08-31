@@ -17,6 +17,7 @@
         "itemLeaseCycleRs": "Item Lease Cycle",
         "alipayUserRs": "Alipay User",
         "tagRs": "Tag",
+        "categoryRs": "Category",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

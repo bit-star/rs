@@ -49,9 +49,6 @@ public class AlipayUser implements Serializable {
     @Column(name = "access_token")
     private String accessToken;
 
-    @Column(name = "alipay_user_id")
-    private String alipayUserId;
-
     @Column(name = "auth_token_type")
     private String authTokenType;
 
@@ -198,19 +195,6 @@ public class AlipayUser implements Serializable {
         this.accessToken = accessToken;
     }
 
-    public String getAlipayUserId() {
-        return alipayUserId;
-    }
-
-    public AlipayUser alipayUserId(String alipayUserId) {
-        this.alipayUserId = alipayUserId;
-        return this;
-    }
-
-    public void setAlipayUserId(String alipayUserId) {
-        this.alipayUserId = alipayUserId;
-    }
-
     public String getAuthTokenType() {
         return authTokenType;
     }
@@ -343,7 +327,6 @@ public class AlipayUser implements Serializable {
             ", province='" + getProvince() + "'" +
             ", city='" + getCity() + "'" +
             ", accessToken='" + getAccessToken() + "'" +
-            ", alipayUserId='" + getAlipayUserId() + "'" +
             ", authTokenType='" + getAuthTokenType() + "'" +
             ", expiresIn='" + getExpiresIn() + "'" +
             ", reExpiresIn='" + getReExpiresIn() + "'" +

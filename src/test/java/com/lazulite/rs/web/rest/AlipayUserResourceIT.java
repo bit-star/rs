@@ -61,9 +61,6 @@ public class AlipayUserResourceIT {
     private static final String DEFAULT_ACCESS_TOKEN = "AAAAAAAAAA";
     private static final String UPDATED_ACCESS_TOKEN = "BBBBBBBBBB";
 
-    private static final String DEFAULT_ALIPAY_USER_ID = "AAAAAAAAAA";
-    private static final String UPDATED_ALIPAY_USER_ID = "BBBBBBBBBB";
-
     private static final String DEFAULT_AUTH_TOKEN_TYPE = "AAAAAAAAAA";
     private static final String UPDATED_AUTH_TOKEN_TYPE = "BBBBBBBBBB";
 
@@ -130,7 +127,6 @@ public class AlipayUserResourceIT {
             .province(DEFAULT_PROVINCE)
             .city(DEFAULT_CITY)
             .accessToken(DEFAULT_ACCESS_TOKEN)
-            .alipayUserId(DEFAULT_ALIPAY_USER_ID)
             .authTokenType(DEFAULT_AUTH_TOKEN_TYPE)
             .expiresIn(DEFAULT_EXPIRES_IN)
             .reExpiresIn(DEFAULT_RE_EXPIRES_IN)
@@ -154,7 +150,6 @@ public class AlipayUserResourceIT {
             .province(UPDATED_PROVINCE)
             .city(UPDATED_CITY)
             .accessToken(UPDATED_ACCESS_TOKEN)
-            .alipayUserId(UPDATED_ALIPAY_USER_ID)
             .authTokenType(UPDATED_AUTH_TOKEN_TYPE)
             .expiresIn(UPDATED_EXPIRES_IN)
             .reExpiresIn(UPDATED_RE_EXPIRES_IN)
@@ -191,7 +186,6 @@ public class AlipayUserResourceIT {
         assertThat(testAlipayUser.getProvince()).isEqualTo(DEFAULT_PROVINCE);
         assertThat(testAlipayUser.getCity()).isEqualTo(DEFAULT_CITY);
         assertThat(testAlipayUser.getAccessToken()).isEqualTo(DEFAULT_ACCESS_TOKEN);
-        assertThat(testAlipayUser.getAlipayUserId()).isEqualTo(DEFAULT_ALIPAY_USER_ID);
         assertThat(testAlipayUser.getAuthTokenType()).isEqualTo(DEFAULT_AUTH_TOKEN_TYPE);
         assertThat(testAlipayUser.getExpiresIn()).isEqualTo(DEFAULT_EXPIRES_IN);
         assertThat(testAlipayUser.getReExpiresIn()).isEqualTo(DEFAULT_RE_EXPIRES_IN);
@@ -238,7 +232,6 @@ public class AlipayUserResourceIT {
             .andExpect(jsonPath("$.[*].province").value(hasItem(DEFAULT_PROVINCE.toString())))
             .andExpect(jsonPath("$.[*].city").value(hasItem(DEFAULT_CITY.toString())))
             .andExpect(jsonPath("$.[*].accessToken").value(hasItem(DEFAULT_ACCESS_TOKEN.toString())))
-            .andExpect(jsonPath("$.[*].alipayUserId").value(hasItem(DEFAULT_ALIPAY_USER_ID.toString())))
             .andExpect(jsonPath("$.[*].authTokenType").value(hasItem(DEFAULT_AUTH_TOKEN_TYPE.toString())))
             .andExpect(jsonPath("$.[*].expiresIn").value(hasItem(DEFAULT_EXPIRES_IN.toString())))
             .andExpect(jsonPath("$.[*].reExpiresIn").value(hasItem(DEFAULT_RE_EXPIRES_IN.toString())))
@@ -265,7 +258,6 @@ public class AlipayUserResourceIT {
             .andExpect(jsonPath("$.province").value(DEFAULT_PROVINCE.toString()))
             .andExpect(jsonPath("$.city").value(DEFAULT_CITY.toString()))
             .andExpect(jsonPath("$.accessToken").value(DEFAULT_ACCESS_TOKEN.toString()))
-            .andExpect(jsonPath("$.alipayUserId").value(DEFAULT_ALIPAY_USER_ID.toString()))
             .andExpect(jsonPath("$.authTokenType").value(DEFAULT_AUTH_TOKEN_TYPE.toString()))
             .andExpect(jsonPath("$.expiresIn").value(DEFAULT_EXPIRES_IN.toString()))
             .andExpect(jsonPath("$.reExpiresIn").value(DEFAULT_RE_EXPIRES_IN.toString()))
@@ -302,7 +294,6 @@ public class AlipayUserResourceIT {
             .province(UPDATED_PROVINCE)
             .city(UPDATED_CITY)
             .accessToken(UPDATED_ACCESS_TOKEN)
-            .alipayUserId(UPDATED_ALIPAY_USER_ID)
             .authTokenType(UPDATED_AUTH_TOKEN_TYPE)
             .expiresIn(UPDATED_EXPIRES_IN)
             .reExpiresIn(UPDATED_RE_EXPIRES_IN)
@@ -326,7 +317,6 @@ public class AlipayUserResourceIT {
         assertThat(testAlipayUser.getProvince()).isEqualTo(UPDATED_PROVINCE);
         assertThat(testAlipayUser.getCity()).isEqualTo(UPDATED_CITY);
         assertThat(testAlipayUser.getAccessToken()).isEqualTo(UPDATED_ACCESS_TOKEN);
-        assertThat(testAlipayUser.getAlipayUserId()).isEqualTo(UPDATED_ALIPAY_USER_ID);
         assertThat(testAlipayUser.getAuthTokenType()).isEqualTo(UPDATED_AUTH_TOKEN_TYPE);
         assertThat(testAlipayUser.getExpiresIn()).isEqualTo(UPDATED_EXPIRES_IN);
         assertThat(testAlipayUser.getReExpiresIn()).isEqualTo(UPDATED_RE_EXPIRES_IN);

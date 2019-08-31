@@ -31,6 +31,7 @@
             <th jhiSortBy="status"><span jhiTranslate="rsApp.commodity.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="leaseMustRead"><span jhiTranslate="rsApp.commodity.leaseMustRead">Lease Must Read</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="desciption"><span jhiTranslate="rsApp.commodity.desciption">Desciption</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="category.id"><span jhiTranslate="rsApp.commodity.category">Category</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -50,6 +51,11 @@
                 <td jhiTranslate="{{'rsApp.CommodityStatus.' + commodity.status}}">{{commodity.status}}</td>
                 <td>{{commodity.leaseMustRead}}</td>
                 <td>{{commodity.desciption}}</td>
+                <td>
+                    <div *ngIf="commodity.category">
+                        <a [routerLink]="['/category-rs', commodity.category?.id, 'view' ]" >{{commodity.category?.id}}</a>
+                    </div>
+                </td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

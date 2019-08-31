@@ -43,6 +43,10 @@ import { RouterModule } from '@angular/router';
       {
         path: 'tag-rs',
         loadChildren: () => import('./tag-rs/tag-rs.module').then(m => m.RsTagRsModule)
+      },
+      {
+        path: 'category-rs',
+        loadChildren: () => import('./category-rs/category-rs.module').then(m => m.RsCategoryRsModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])

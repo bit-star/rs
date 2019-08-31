@@ -38,10 +38,6 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "alipayUserId",
-            "fieldType": "String"
-        },
-        {
             "fieldName": "authTokenType",
             "fieldType": "String"
         },

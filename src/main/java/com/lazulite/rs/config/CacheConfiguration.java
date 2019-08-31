@@ -62,6 +62,8 @@ public class CacheConfiguration {
             createCache(cm, com.lazulite.rs.domain.AlipayUser.class.getName() + ".orders");
             createCache(cm, com.lazulite.rs.domain.AlipayUser.class.getName() + ".shippingAddresses");
             createCache(cm, com.lazulite.rs.domain.Tag.class.getName());
+            createCache(cm, com.lazulite.rs.domain.Category.class.getName());
+            createCache(cm, com.lazulite.rs.domain.Category.class.getName() + ".commodities");
             // jhipster-needle-ehcache-add-entry
         };
     }

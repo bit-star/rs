@@ -25,7 +25,6 @@
       "province": "Province",
       "city": "City",
       "accessToken": "Access Token",
-      "alipayUserId": "Alipay User Id",
       "authTokenType": "Auth Token Type",
       "expiresIn": "Expires In",
       "reExpiresIn": "Re Expires In",

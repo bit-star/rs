@@ -12,7 +12,6 @@ export interface IAlipayUserRs {
   province?: string;
   city?: string;
   accessToken?: string;
-  alipayUserId?: string;
   authTokenType?: string;
   expiresIn?: string;
   reExpiresIn?: string;
@@ -33,7 +32,6 @@ export class AlipayUserRs implements IAlipayUserRs {
     public province?: string,
     public city?: string,
     public accessToken?: string,
-    public alipayUserId?: string,
     public authTokenType?: string,
     public expiresIn?: string,
     public reExpiresIn?: string,
