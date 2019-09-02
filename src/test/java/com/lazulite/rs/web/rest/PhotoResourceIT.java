@@ -48,6 +48,10 @@ public class PhotoResourceIT {
     private static final Long UPDATED_HEIGHT = 2L;
     private static final Long SMALLER_HEIGHT = 1L - 1L;
 
+    private static final Long DEFAULT_RANK_ORDER = 1L;
+    private static final Long UPDATED_RANK_ORDER = 2L;
+    private static final Long SMALLER_RANK_ORDER = 1L - 1L;
+
     @Autowired
     private PhotoRepository photoRepository;
 
@@ -96,7 +100,8 @@ public class PhotoResourceIT {
             .originalImage(DEFAULT_ORIGINAL_IMAGE)
             .thumbnail(DEFAULT_THUMBNAIL)
             .width(DEFAULT_WIDTH)
-            .height(DEFAULT_HEIGHT);
+            .height(DEFAULT_HEIGHT)
+            .rankOrder(DEFAULT_RANK_ORDER);
         return photo;
     }
     /**
@@ -110,7 +115,8 @@ public class PhotoResourceIT {
             .originalImage(UPDATED_ORIGINAL_IMAGE)
             .thumbnail(UPDATED_THUMBNAIL)
             .width(UPDATED_WIDTH)
-            .height(UPDATED_HEIGHT);
+            .height(UPDATED_HEIGHT)
+            .rankOrder(UPDATED_RANK_ORDER);
         return photo;
     }
 
@@ -138,6 +144,7 @@ public class PhotoResourceIT {
         assertThat(testPhoto.getThumbnail()).isEqualTo(DEFAULT_THUMBNAIL);
         assertThat(testPhoto.getWidth()).isEqualTo(DEFAULT_WIDTH);
         assertThat(testPhoto.getHeight()).isEqualTo(DEFAULT_HEIGHT);
+        assertThat(testPhoto.getRankOrder()).isEqualTo(DEFAULT_RANK_ORDER);
     }
 
     @Test
@@ -174,7 +181,8 @@ public class PhotoResourceIT {
             .andExpect(jsonPath("$.[*].originalImage").value(hasItem(DEFAULT_ORIGINAL_IMAGE.toString())))
             .andExpect(jsonPath("$.[*].thumbnail").value(hasItem(DEFAULT_THUMBNAIL.toString())))
             .andExpect(jsonPath("$.[*].width").value(hasItem(DEFAULT_WIDTH.intValue())))
-            .andExpect(jsonPath("$.[*].height").value(hasItem(DEFAULT_HEIGHT.intValue())));
+            .andExpect(jsonPath("$.[*].height").value(hasItem(DEFAULT_HEIGHT.intValue())))
+            .andExpect(jsonPath("$.[*].rankOrder").value(hasItem(DEFAULT_RANK_ORDER.intValue())));
     }
     
     @Test
@@ -191,7 +199,8 @@ public class PhotoResourceIT {
             .andExpect(jsonPath("$.originalImage").value(DEFAULT_ORIGINAL_IMAGE.toString()))
             .andExpect(jsonPath("$.thumbnail").value(DEFAULT_THUMBNAIL.toString()))
             .andExpect(jsonPath("$.width").value(DEFAULT_WIDTH.intValue()))
-            .andExpect(jsonPath("$.height").value(DEFAULT_HEIGHT.intValue()));
+            .andExpect(jsonPath("$.height").value(DEFAULT_HEIGHT.intValue()))
+            .andExpect(jsonPath("$.rankOrder").value(DEFAULT_RANK_ORDER.intValue()));
     }
 
     @Test
@@ -218,7 +227,8 @@ public class PhotoResourceIT {
             .originalImage(UPDATED_ORIGINAL_IMAGE)
             .thumbnail(UPDATED_THUMBNAIL)
             .width(UPDATED_WIDTH)
-            .height(UPDATED_HEIGHT);
+            .height(UPDATED_HEIGHT)
+            .rankOrder(UPDATED_RANK_ORDER);
 
         restPhotoMockMvc.perform(put("/api/photos")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -233,6 +243,7 @@ public class PhotoResourceIT {
         assertThat(testPhoto.getThumbnail()).isEqualTo(UPDATED_THUMBNAIL);
         assertThat(testPhoto.getWidth()).isEqualTo(UPDATED_WIDTH);
         assertThat(testPhoto.getHeight()).isEqualTo(UPDATED_HEIGHT);
+        assertThat(testPhoto.getRankOrder()).isEqualTo(UPDATED_RANK_ORDER);
     }
 
     @Test

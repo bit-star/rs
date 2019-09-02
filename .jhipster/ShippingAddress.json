@@ -10,18 +10,23 @@
             "fieldType": "String"
         },
         {
+            "fieldName": "province",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "region",
+            "fieldType": "String"
+        },
+        {
             "fieldName": "address",
             "fieldType": "String"
         }
     ],
     "relationships": [
-        {
-            "relationshipType": "many-to-one",
-            "otherEntityName": "pcr",
-            "otherEntityRelationshipName": "shippingAddress",
-            "relationshipName": "pcr",
-            "otherEntityField": "id"
-        },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "alipayUser",

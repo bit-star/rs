@@ -33,6 +33,9 @@ public class Photo implements Serializable {
     @Column(name = "height")
     private Long height;
 
+    @Column(name = "rank_order")
+    private Long rankOrder;
+
     @ManyToOne
     @JsonIgnoreProperties("photos")
     private Commodity commodity;
@@ -98,6 +101,19 @@ public class Photo implements Serializable {
         this.height = height;
     }
 
+    public Long getRankOrder() {
+        return rankOrder;
+    }
+
+    public Photo rankOrder(Long rankOrder) {
+        this.rankOrder = rankOrder;
+        return this;
+    }
+
+    public void setRankOrder(Long rankOrder) {
+        this.rankOrder = rankOrder;
+    }
+
     public Commodity getCommodity() {
         return commodity;
     }
@@ -136,6 +152,7 @@ public class Photo implements Serializable {
             ", thumbnail='" + getThumbnail() + "'" +
             ", width=" + getWidth() +
             ", height=" + getHeight() +
+            ", rankOrder=" + getRankOrder() +
             "}";
     }
 }

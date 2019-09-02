@@ -40,6 +40,15 @@ public class ShippingAddressResourceIT {
     private static final String DEFAULT_MOBLIE = "AAAAAAAAAA";
     private static final String UPDATED_MOBLIE = "BBBBBBBBBB";
 
+    private static final String DEFAULT_PROVINCE = "AAAAAAAAAA";
+    private static final String UPDATED_PROVINCE = "BBBBBBBBBB";
+
+    private static final String DEFAULT_CITY = "AAAAAAAAAA";
+    private static final String UPDATED_CITY = "BBBBBBBBBB";
+
+    private static final String DEFAULT_REGION = "AAAAAAAAAA";
+    private static final String UPDATED_REGION = "BBBBBBBBBB";
+
     private static final String DEFAULT_ADDRESS = "AAAAAAAAAA";
     private static final String UPDATED_ADDRESS = "BBBBBBBBBB";
 
@@ -90,6 +99,9 @@ public class ShippingAddressResourceIT {
         ShippingAddress shippingAddress = new ShippingAddress()
             .receiver(DEFAULT_RECEIVER)
             .moblie(DEFAULT_MOBLIE)
+            .province(DEFAULT_PROVINCE)
+            .city(DEFAULT_CITY)
+            .region(DEFAULT_REGION)
             .address(DEFAULT_ADDRESS);
         return shippingAddress;
     }
@@ -103,6 +115,9 @@ public class ShippingAddressResourceIT {
         ShippingAddress shippingAddress = new ShippingAddress()
             .receiver(UPDATED_RECEIVER)
             .moblie(UPDATED_MOBLIE)
+            .province(UPDATED_PROVINCE)
+            .city(UPDATED_CITY)
+            .region(UPDATED_REGION)
             .address(UPDATED_ADDRESS);
         return shippingAddress;
     }
@@ -129,6 +144,9 @@ public class ShippingAddressResourceIT {
         ShippingAddress testShippingAddress = shippingAddressList.get(shippingAddressList.size() - 1);
         assertThat(testShippingAddress.getReceiver()).isEqualTo(DEFAULT_RECEIVER);
         assertThat(testShippingAddress.getMoblie()).isEqualTo(DEFAULT_MOBLIE);
+        assertThat(testShippingAddress.getProvince()).isEqualTo(DEFAULT_PROVINCE);
+        assertThat(testShippingAddress.getCity()).isEqualTo(DEFAULT_CITY);
+        assertThat(testShippingAddress.getRegion()).isEqualTo(DEFAULT_REGION);
         assertThat(testShippingAddress.getAddress()).isEqualTo(DEFAULT_ADDRESS);
     }
 
@@ -165,6 +183,9 @@ public class ShippingAddressResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(shippingAddress.getId().intValue())))
             .andExpect(jsonPath("$.[*].receiver").value(hasItem(DEFAULT_RECEIVER.toString())))
             .andExpect(jsonPath("$.[*].moblie").value(hasItem(DEFAULT_MOBLIE.toString())))
+            .andExpect(jsonPath("$.[*].province").value(hasItem(DEFAULT_PROVINCE.toString())))
+            .andExpect(jsonPath("$.[*].city").value(hasItem(DEFAULT_CITY.toString())))
+            .andExpect(jsonPath("$.[*].region").value(hasItem(DEFAULT_REGION.toString())))
             .andExpect(jsonPath("$.[*].address").value(hasItem(DEFAULT_ADDRESS.toString())));
     }
     
@@ -181,6 +202,9 @@ public class ShippingAddressResourceIT {
             .andExpect(jsonPath("$.id").value(shippingAddress.getId().intValue()))
             .andExpect(jsonPath("$.receiver").value(DEFAULT_RECEIVER.toString()))
             .andExpect(jsonPath("$.moblie").value(DEFAULT_MOBLIE.toString()))
+            .andExpect(jsonPath("$.province").value(DEFAULT_PROVINCE.toString()))
+            .andExpect(jsonPath("$.city").value(DEFAULT_CITY.toString()))
+            .andExpect(jsonPath("$.region").value(DEFAULT_REGION.toString()))
             .andExpect(jsonPath("$.address").value(DEFAULT_ADDRESS.toString()));
     }
 
@@ -207,6 +231,9 @@ public class ShippingAddressResourceIT {
         updatedShippingAddress
             .receiver(UPDATED_RECEIVER)
             .moblie(UPDATED_MOBLIE)
+            .province(UPDATED_PROVINCE)
+            .city(UPDATED_CITY)
+            .region(UPDATED_REGION)
             .address(UPDATED_ADDRESS);
 
         restShippingAddressMockMvc.perform(put("/api/shipping-addresses")
@@ -220,6 +247,9 @@ public class ShippingAddressResourceIT {
         ShippingAddress testShippingAddress = shippingAddressList.get(shippingAddressList.size() - 1);
         assertThat(testShippingAddress.getReceiver()).isEqualTo(UPDATED_RECEIVER);
         assertThat(testShippingAddress.getMoblie()).isEqualTo(UPDATED_MOBLIE);
+        assertThat(testShippingAddress.getProvince()).isEqualTo(UPDATED_PROVINCE);
+        assertThat(testShippingAddress.getCity()).isEqualTo(UPDATED_CITY);
+        assertThat(testShippingAddress.getRegion()).isEqualTo(UPDATED_REGION);
         assertThat(testShippingAddress.getAddress()).isEqualTo(UPDATED_ADDRESS);
     }
 

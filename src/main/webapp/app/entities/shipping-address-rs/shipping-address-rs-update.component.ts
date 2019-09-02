@@ -7,8 +7,6 @@ import { filter, map } from 'rxjs/operators';
 import { JhiAlertService } from 'ng-jhipster';
 import { IShippingAddressRs, ShippingAddressRs } from 'app/shared/model/shipping-address-rs.model';
 import { ShippingAddressRsService } from './shipping-address-rs.service';
-import { IPcrRs } from 'app/shared/model/pcr-rs.model';
-import { PcrRsService } from 'app/entities/pcr-rs';
 import { IAlipayUserRs } from 'app/shared/model/alipay-user-rs.model';
 import { AlipayUserRsService } from 'app/entities/alipay-user-rs';
 
@@ -19,23 +17,22 @@ import { AlipayUserRsService } from 'app/entities/alipay-user-rs';
 export class ShippingAddressRsUpdateComponent implements OnInit {
   isSaving: boolean;
 
-  pcrs: IPcrRs[];
-
   alipayusers: IAlipayUserRs[];
 
   editForm = this.fb.group({
     id: [],
     receiver: [],
     moblie: [],
+    province: [],
+    city: [],
+    region: [],
     address: [],
-    pcr: [],
     alipayUser: []
   });
 
   constructor(
     protected jhiAlertService: JhiAlertService,
     protected shippingAddressService: ShippingAddressRsService,
-    protected pcrService: PcrRsService,
     protected alipayUserService: AlipayUserRsService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
@@ -46,13 +43,6 @@ export class ShippingAddressRsUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ shippingAddress }) => {
       this.updateForm(shippingAddress);
     });
-    this.pcrService
-      .query()
-      .pipe(
-        filter((mayBeOk: HttpResponse<IPcrRs[]>) => mayBeOk.ok),
-        map((response: HttpResponse<IPcrRs[]>) => response.body)
-      )
-      .subscribe((res: IPcrRs[]) => (this.pcrs = res), (res: HttpErrorResponse) => this.onError(res.message));
     this.alipayUserService
       .query()
       .pipe(
@@ -67,8 +57,10 @@ export class ShippingAddressRsUpdateComponent implements OnInit {
       id: shippingAddress.id,
       receiver: shippingAddress.receiver,
       moblie: shippingAddress.moblie,
+      province: shippingAddress.province,
+      city: shippingAddress.city,
+      region: shippingAddress.region,
       address: shippingAddress.address,
-      pcr: shippingAddress.pcr,
       alipayUser: shippingAddress.alipayUser
     });
   }
@@ -93,8 +85,10 @@ export class ShippingAddressRsUpdateComponent implements OnInit {
       id: this.editForm.get(['id']).value,
       receiver: this.editForm.get(['receiver']).value,
       moblie: this.editForm.get(['moblie']).value,
+      province: this.editForm.get(['province']).value,
+      city: this.editForm.get(['city']).value,
+      region: this.editForm.get(['region']).value,
       address: this.editForm.get(['address']).value,
-      pcr: this.editForm.get(['pcr']).value,
       alipayUser: this.editForm.get(['alipayUser']).value
     };
   }
@@ -113,10 +107,6 @@ export class ShippingAddressRsUpdateComponent implements OnInit {
   }
   protected onError(errorMessage: string) {
     this.jhiAlertService.error(errorMessage, null, null);
-  }
-
-  trackPcrById(index: number, item: IPcrRs) {
-    return item.id;
   }
 
   trackAlipayUserById(index: number, item: IAlipayUserRs) {

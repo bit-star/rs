@@ -25,6 +25,7 @@ export class PhotoRsUpdateComponent implements OnInit {
     thumbnail: [],
     width: [],
     height: [],
+    rankOrder: [],
     commodity: []
   });
 
@@ -57,6 +58,7 @@ export class PhotoRsUpdateComponent implements OnInit {
       thumbnail: photo.thumbnail,
       width: photo.width,
       height: photo.height,
+      rankOrder: photo.rankOrder,
       commodity: photo.commodity
     });
   }
@@ -83,6 +85,7 @@ export class PhotoRsUpdateComponent implements OnInit {
       thumbnail: this.editForm.get(['thumbnail']).value,
       width: this.editForm.get(['width']).value,
       height: this.editForm.get(['height']).value,
+      rankOrder: this.editForm.get(['rankOrder']).value,
       commodity: this.editForm.get(['commodity']).value
     };
   }
