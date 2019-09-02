@@ -164,13 +164,11 @@ entity Tag{
 
 // defining multiple OneToMany relationships with comments
 relationship OneToMany {
-	AlipayUser to Order,
+
 
 	Order  to OrderItem,
     
 	OrderItem to ItemLeaseCycle,
-    
-    AlipayUser to ShippingAddress,
     
     Commodity to Photo,
     
@@ -181,7 +179,9 @@ relationship OneToMany {
 
 relationship ManyToOne {
 	OrderItem to Commodity,
-    Commodity to Category
+    Commodity to Category,
+    Order to User,
+    ShippingAddress to User
 }
 
 
