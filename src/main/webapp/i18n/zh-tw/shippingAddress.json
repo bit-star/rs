@@ -18,8 +18,10 @@
       },
       "receiver": "Receiver",
       "moblie": "Moblie",
+      "province": "Province",
+      "city": "City",
+      "region": "Region",
       "address": "Address",
-      "pcr": "Pcr",
       "alipayUser": "Alipay User"
     }
   }

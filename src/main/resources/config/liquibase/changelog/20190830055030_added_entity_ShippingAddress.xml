@@ -24,11 +24,19 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="address" type="varchar(255)">
+            <column name="province" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="pcr_id" type="bigint">
+            <column name="city" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="region" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="address" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
@@ -62,6 +70,9 @@
             <column name="id" type="numeric"/>
             <column name="receiver" type="string"/>
             <column name="moblie" type="string"/>
+            <column name="province" type="string"/>
+            <column name="city" type="string"/>
+            <column name="region" type="string"/>
             <column name="address" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>

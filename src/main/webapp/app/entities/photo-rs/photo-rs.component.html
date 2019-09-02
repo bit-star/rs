@@ -22,6 +22,7 @@
             <th jhiSortBy="thumbnail"><span jhiTranslate="rsApp.photo.thumbnail">Thumbnail</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="width"><span jhiTranslate="rsApp.photo.width">Width</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="height"><span jhiTranslate="rsApp.photo.height">Height</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rankOrder"><span jhiTranslate="rsApp.photo.rankOrder">Rank Order</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="commodity.id"><span jhiTranslate="rsApp.photo.commodity">Commodity</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
@@ -33,6 +34,7 @@
                 <td>{{photo.thumbnail}}</td>
                 <td>{{photo.width}}</td>
                 <td>{{photo.height}}</td>
+                <td>{{photo.rankOrder}}</td>
                 <td>
                     <div *ngIf="photo.commodity">
                         <a [routerLink]="['/commodity-rs', photo.commodity?.id, 'view' ]" >{{photo.commodity?.id}}</a>

@@ -16,6 +16,10 @@
         {
             "fieldName": "height",
             "fieldType": "Long"
+        },
+        {
+            "fieldName": "rankOrder",
+            "fieldType": "Long"
         }
     ],
     "relationships": [

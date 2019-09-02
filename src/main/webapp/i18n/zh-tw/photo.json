@@ -20,6 +20,7 @@
       "thumbnail": "Thumbnail",
       "width": "Width",
       "height": "Height",
+      "rankOrder": "Rank Order",
       "commodity": "Commodity"
     }
   }

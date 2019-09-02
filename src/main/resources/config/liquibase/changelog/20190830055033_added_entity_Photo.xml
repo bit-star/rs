@@ -32,6 +32,10 @@
                 <constraints nullable="true" />
             </column>
 
+            <column name="rank_order" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
             <column name="commodity_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -64,6 +68,7 @@
             <column name="thumbnail" type="string"/>
             <column name="width" type="numeric"/>
             <column name="height" type="numeric"/>
+            <column name="rank_order" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>
     </changeSet>

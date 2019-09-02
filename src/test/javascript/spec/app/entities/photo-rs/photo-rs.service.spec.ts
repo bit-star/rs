@@ -23,7 +23,7 @@ describe('Service Tests', () => {
       service = injector.get(PhotoRsService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new PhotoRs(0, 'AAAAAAA', 'AAAAAAA', 0, 0);
+      elemDefault = new PhotoRs(0, 'AAAAAAA', 'AAAAAAA', 0, 0, 0);
     });
 
     describe('Service methods', () => {
@@ -62,7 +62,8 @@ describe('Service Tests', () => {
             originalImage: 'BBBBBB',
             thumbnail: 'BBBBBB',
             width: 1,
-            height: 1
+            height: 1,
+            rankOrder: 1
           },
           elemDefault
         );
@@ -83,7 +84,8 @@ describe('Service Tests', () => {
             originalImage: 'BBBBBB',
             thumbnail: 'BBBBBB',
             width: 1,
-            height: 1
+            height: 1,
+            rankOrder: 1
           },
           elemDefault
         );

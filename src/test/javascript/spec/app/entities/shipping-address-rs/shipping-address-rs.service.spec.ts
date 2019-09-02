@@ -23,7 +23,7 @@ describe('Service Tests', () => {
       service = injector.get(ShippingAddressRsService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new ShippingAddressRs(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new ShippingAddressRs(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -61,6 +61,9 @@ describe('Service Tests', () => {
           {
             receiver: 'BBBBBB',
             moblie: 'BBBBBB',
+            province: 'BBBBBB',
+            city: 'BBBBBB',
+            region: 'BBBBBB',
             address: 'BBBBBB'
           },
           elemDefault
@@ -81,6 +84,9 @@ describe('Service Tests', () => {
           {
             receiver: 'BBBBBB',
             moblie: 'BBBBBB',
+            province: 'BBBBBB',
+            city: 'BBBBBB',
+            region: 'BBBBBB',
             address: 'BBBBBB'
           },
           elemDefault

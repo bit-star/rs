@@ -20,8 +20,10 @@
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="receiver"><span jhiTranslate="rsApp.shippingAddress.receiver">Receiver</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="moblie"><span jhiTranslate="rsApp.shippingAddress.moblie">Moblie</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="province"><span jhiTranslate="rsApp.shippingAddress.province">Province</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="city"><span jhiTranslate="rsApp.shippingAddress.city">City</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="region"><span jhiTranslate="rsApp.shippingAddress.region">Region</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="address"><span jhiTranslate="rsApp.shippingAddress.address">Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="pcr.id"><span jhiTranslate="rsApp.shippingAddress.pcr">Pcr</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="alipayUser.id"><span jhiTranslate="rsApp.shippingAddress.alipayUser">Alipay User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
@@ -31,12 +33,10 @@
                 <td><a [routerLink]="['/shipping-address-rs', shippingAddress.id, 'view' ]">{{shippingAddress.id}}</a></td>
                 <td>{{shippingAddress.receiver}}</td>
                 <td>{{shippingAddress.moblie}}</td>
+                <td>{{shippingAddress.province}}</td>
+                <td>{{shippingAddress.city}}</td>
+                <td>{{shippingAddress.region}}</td>
                 <td>{{shippingAddress.address}}</td>
-                <td>
-                    <div *ngIf="shippingAddress.pcr">
-                        <a [routerLink]="['/pcr-rs', shippingAddress.pcr?.id, 'view' ]" >{{shippingAddress.pcr?.id}}</a>
-                    </div>
-                </td>
                 <td>
                     <div *ngIf="shippingAddress.alipayUser">
                         <a [routerLink]="['/alipay-user-rs', shippingAddress.alipayUser?.id, 'view' ]" >{{shippingAddress.alipayUser?.id}}</a>

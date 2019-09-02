@@ -13,15 +13,21 @@
                 <dd>
                     <span>{{shippingAddress.moblie}}</span>
                 </dd>
+                <dt><span jhiTranslate="rsApp.shippingAddress.province">Province</span></dt>
+                <dd>
+                    <span>{{shippingAddress.province}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.shippingAddress.city">City</span></dt>
+                <dd>
+                    <span>{{shippingAddress.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.shippingAddress.region">Region</span></dt>
+                <dd>
+                    <span>{{shippingAddress.region}}</span>
+                </dd>
                 <dt><span jhiTranslate="rsApp.shippingAddress.address">Address</span></dt>
                 <dd>
                     <span>{{shippingAddress.address}}</span>
-                </dd>
-                <dt><span jhiTranslate="rsApp.shippingAddress.pcr">Pcr</span></dt>
-                <dd>
-                    <div *ngIf="shippingAddress.pcr">
-                        <a [routerLink]="['/pcr-rs', shippingAddress.pcr?.id, 'view']">{{shippingAddress.pcr?.id}}</a>
-                    </div>
                 </dd>
                 <dt><span jhiTranslate="rsApp.shippingAddress.alipayUser">Alipay User</span></dt>
                 <dd>

@@ -29,12 +29,17 @@ public class ShippingAddress implements Serializable {
     @Column(name = "moblie")
     private String moblie;
 
+    @Column(name = "province")
+    private String province;
+
+    @Column(name = "city")
+    private String city;
+
+    @Column(name = "region")
+    private String region;
+
     @Column(name = "address")
     private String address;
-
-    @ManyToOne
-    @JsonIgnoreProperties("shippingAddresses")
-    private Pcr pcr;
 
     @ManyToOne
     @JsonIgnoreProperties("shippingAddresses")
@@ -75,6 +80,45 @@ public class ShippingAddress implements Serializable {
         this.moblie = moblie;
     }
 
+    public String getProvince() {
+        return province;
+    }
+
+    public ShippingAddress province(String province) {
+        this.province = province;
+        return this;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public ShippingAddress city(String city) {
+        this.city = city;
+        return this;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public ShippingAddress region(String region) {
+        this.region = region;
+        return this;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -86,19 +130,6 @@ public class ShippingAddress implements Serializable {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public Pcr getPcr() {
-        return pcr;
-    }
-
-    public ShippingAddress pcr(Pcr pcr) {
-        this.pcr = pcr;
-        return this;
-    }
-
-    public void setPcr(Pcr pcr) {
-        this.pcr = pcr;
     }
 
     public AlipayUser getAlipayUser() {
@@ -137,6 +168,9 @@ public class ShippingAddress implements Serializable {
             "id=" + getId() +
             ", receiver='" + getReceiver() + "'" +
             ", moblie='" + getMoblie() + "'" +
+            ", province='" + getProvince() + "'" +
+            ", city='" + getCity() + "'" +
+            ", region='" + getRegion() + "'" +
             ", address='" + getAddress() + "'" +
             "}";
     }

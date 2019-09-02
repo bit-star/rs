@@ -8,12 +8,6 @@
     -->
     <changeSet id="20190830055030-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="pcr_id"
-                                 baseTableName="shipping_address"
-                                 constraintName="fk_shipping_address_pcr_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="pcr"/>
-
         <addForeignKeyConstraint baseColumnNames="alipay_user_id"
                                  baseTableName="shipping_address"
                                  constraintName="fk_shipping_address_alipay_user_id"
