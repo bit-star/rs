@@ -22,7 +22,7 @@
       "city": "City",
       "region": "Region",
       "address": "Address",
-      "alipayUser": "Alipay User"
+      "user": "User"
     }
   }
 }

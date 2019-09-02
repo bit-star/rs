@@ -7,8 +7,7 @@ import { filter, map } from 'rxjs/operators';
 import { JhiAlertService } from 'ng-jhipster';
 import { IShippingAddressRs, ShippingAddressRs } from 'app/shared/model/shipping-address-rs.model';
 import { ShippingAddressRsService } from './shipping-address-rs.service';
-import { IAlipayUserRs } from 'app/shared/model/alipay-user-rs.model';
-import { AlipayUserRsService } from 'app/entities/alipay-user-rs';
+import { IUser, UserService } from 'app/core';
 
 @Component({
   selector: 'jhi-shipping-address-rs-update',
@@ -17,7 +16,7 @@ import { AlipayUserRsService } from 'app/entities/alipay-user-rs';
 export class ShippingAddressRsUpdateComponent implements OnInit {
   isSaving: boolean;
 
-  alipayusers: IAlipayUserRs[];
+  users: IUser[];
 
   editForm = this.fb.group({
     id: [],
@@ -27,13 +26,13 @@ export class ShippingAddressRsUpdateComponent implements OnInit {
     city: [],
     region: [],
     address: [],
-    alipayUser: []
+    user: []
   });
 
   constructor(
     protected jhiAlertService: JhiAlertService,
     protected shippingAddressService: ShippingAddressRsService,
-    protected alipayUserService: AlipayUserRsService,
+    protected userService: UserService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -43,13 +42,13 @@ export class ShippingAddressRsUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ shippingAddress }) => {
       this.updateForm(shippingAddress);
     });
-    this.alipayUserService
+    this.userService
       .query()
       .pipe(
-        filter((mayBeOk: HttpResponse<IAlipayUserRs[]>) => mayBeOk.ok),
-        map((response: HttpResponse<IAlipayUserRs[]>) => response.body)
+        filter((mayBeOk: HttpResponse<IUser[]>) => mayBeOk.ok),
+        map((response: HttpResponse<IUser[]>) => response.body)
       )
-      .subscribe((res: IAlipayUserRs[]) => (this.alipayusers = res), (res: HttpErrorResponse) => this.onError(res.message));
+      .subscribe((res: IUser[]) => (this.users = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(shippingAddress: IShippingAddressRs) {
@@ -61,7 +60,7 @@ export class ShippingAddressRsUpdateComponent implements OnInit {
       city: shippingAddress.city,
       region: shippingAddress.region,
       address: shippingAddress.address,
-      alipayUser: shippingAddress.alipayUser
+      user: shippingAddress.user
     });
   }
 
@@ -89,7 +88,7 @@ export class ShippingAddressRsUpdateComponent implements OnInit {
       city: this.editForm.get(['city']).value,
       region: this.editForm.get(['region']).value,
       address: this.editForm.get(['address']).value,
-      alipayUser: this.editForm.get(['alipayUser']).value
+      user: this.editForm.get(['user']).value
     };
   }
 
@@ -109,7 +108,7 @@ export class ShippingAddressRsUpdateComponent implements OnInit {
     this.jhiAlertService.error(errorMessage, null, null);
   }
 
-  trackAlipayUserById(index: number, item: IAlipayUserRs) {
+  trackUserById(index: number, item: IUser) {
     return item.id;
   }
 }

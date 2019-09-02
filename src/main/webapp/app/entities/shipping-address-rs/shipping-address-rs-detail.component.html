@@ -29,11 +29,9 @@
                 <dd>
                     <span>{{shippingAddress.address}}</span>
                 </dd>
-                <dt><span jhiTranslate="rsApp.shippingAddress.alipayUser">Alipay User</span></dt>
+                <dt><span jhiTranslate="rsApp.shippingAddress.user">User</span></dt>
                 <dd>
-                    <div *ngIf="shippingAddress.alipayUser">
-                        <a [routerLink]="['/alipay-user-rs', shippingAddress.alipayUser?.id, 'view']">{{shippingAddress.alipayUser?.id}}</a>
-                    </div>
+                    {{shippingAddress.user?.id}}
                 </dd>
             </dl>
 

@@ -24,7 +24,7 @@
             <th jhiSortBy="city"><span jhiTranslate="rsApp.shippingAddress.city">City</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="region"><span jhiTranslate="rsApp.shippingAddress.region">Region</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="address"><span jhiTranslate="rsApp.shippingAddress.address">Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="alipayUser.id"><span jhiTranslate="rsApp.shippingAddress.alipayUser">Alipay User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="user.id"><span jhiTranslate="rsApp.shippingAddress.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -38,9 +38,7 @@
                 <td>{{shippingAddress.region}}</td>
                 <td>{{shippingAddress.address}}</td>
                 <td>
-                    <div *ngIf="shippingAddress.alipayUser">
-                        <a [routerLink]="['/alipay-user-rs', shippingAddress.alipayUser?.id, 'view' ]" >{{shippingAddress.alipayUser?.id}}</a>
-                    </div>
+                    {{shippingAddress.user?.id}}
                 </td>
                 <td class="text-right">
                     <div class="btn-group">

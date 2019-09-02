@@ -7,8 +7,7 @@ import { filter, map } from 'rxjs/operators';
 import { JhiAlertService } from 'ng-jhipster';
 import { IOrderRs, OrderRs } from 'app/shared/model/order-rs.model';
 import { OrderRsService } from './order-rs.service';
-import { IAlipayUserRs } from 'app/shared/model/alipay-user-rs.model';
-import { AlipayUserRsService } from 'app/entities/alipay-user-rs';
+import { IUser, UserService } from 'app/core';
 
 @Component({
   selector: 'jhi-order-rs-update',
@@ -17,7 +16,7 @@ import { AlipayUserRsService } from 'app/entities/alipay-user-rs';
 export class OrderRsUpdateComponent implements OnInit {
   isSaving: boolean;
 
-  alipayusers: IAlipayUserRs[];
+  users: IUser[];
 
   editForm = this.fb.group({
     id: [],
@@ -36,13 +35,13 @@ export class OrderRsUpdateComponent implements OnInit {
     freight: [],
     description: [],
     processingOpinions: [],
-    alipayUser: []
+    user: []
   });
 
   constructor(
     protected jhiAlertService: JhiAlertService,
     protected orderService: OrderRsService,
-    protected alipayUserService: AlipayUserRsService,
+    protected userService: UserService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -52,13 +51,13 @@ export class OrderRsUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ order }) => {
       this.updateForm(order);
     });
-    this.alipayUserService
+    this.userService
       .query()
       .pipe(
-        filter((mayBeOk: HttpResponse<IAlipayUserRs[]>) => mayBeOk.ok),
-        map((response: HttpResponse<IAlipayUserRs[]>) => response.body)
+        filter((mayBeOk: HttpResponse<IUser[]>) => mayBeOk.ok),
+        map((response: HttpResponse<IUser[]>) => response.body)
       )
-      .subscribe((res: IAlipayUserRs[]) => (this.alipayusers = res), (res: HttpErrorResponse) => this.onError(res.message));
+      .subscribe((res: IUser[]) => (this.users = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(order: IOrderRs) {
@@ -79,7 +78,7 @@ export class OrderRsUpdateComponent implements OnInit {
       freight: order.freight,
       description: order.description,
       processingOpinions: order.processingOpinions,
-      alipayUser: order.alipayUser
+      user: order.user
     });
   }
 
@@ -116,7 +115,7 @@ export class OrderRsUpdateComponent implements OnInit {
       freight: this.editForm.get(['freight']).value,
       description: this.editForm.get(['description']).value,
       processingOpinions: this.editForm.get(['processingOpinions']).value,
-      alipayUser: this.editForm.get(['alipayUser']).value
+      user: this.editForm.get(['user']).value
     };
   }
 
@@ -136,7 +135,7 @@ export class OrderRsUpdateComponent implements OnInit {
     this.jhiAlertService.error(errorMessage, null, null);
   }
 
-  trackAlipayUserById(index: number, item: IAlipayUserRs) {
+  trackUserById(index: number, item: IUser) {
     return item.id;
   }
 }

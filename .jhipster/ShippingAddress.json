@@ -29,9 +29,9 @@
     "relationships": [
         {
             "relationshipType": "many-to-one",
-            "otherEntityName": "alipayUser",
+            "otherEntityName": "user",
             "otherEntityRelationshipName": "shippingAddress",
-            "relationshipName": "alipayUser",
+            "relationshipName": "user",
             "otherEntityField": "id"
         }
     ],

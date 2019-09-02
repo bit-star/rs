@@ -58,20 +58,7 @@
             "fieldType": "String"
         }
     ],
-    "relationships": [
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "order",
-            "otherEntityRelationshipName": "alipayUser",
-            "relationshipName": "order"
-        },
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "shippingAddress",
-            "otherEntityRelationshipName": "alipayUser",
-            "relationshipName": "shippingAddress"
-        }
-    ],
+    "relationships": [],
     "changelogDate": "20190830055038",
     "entityTableName": "alipay_user",
     "dto": "no",

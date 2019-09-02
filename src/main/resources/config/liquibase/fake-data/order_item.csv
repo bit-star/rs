@@ -1,11 +1,11 @@
 id;unit_price;actually_paid;rights_protection_status
 1;59538;30993;Objection
-2;42678;20990;Objection
-3;3654;37772;Normal
-4;29404;77552;Normal
+2;42678;20990;Normal
+3;3654;37772;Objection
+4;29404;77552;Objection
 5;40076;49701;Normal
 6;33436;86178;Normal
 7;37330;27230;Normal
 8;52657;40873;Objection
 9;65892;40798;Objection
-10;25388;23107;Normal
+10;25388;23107;Objection

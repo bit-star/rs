@@ -83,7 +83,7 @@ public class Order implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("orders")
-    private AlipayUser alipayUser;
+    private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -314,17 +314,17 @@ public class Order implements Serializable {
         this.orderItems = orderItems;
     }
 
-    public AlipayUser getAlipayUser() {
-        return alipayUser;
+    public User getUser() {
+        return user;
     }
 
-    public Order alipayUser(AlipayUser alipayUser) {
-        this.alipayUser = alipayUser;
+    public Order user(User user) {
+        this.user = user;
         return this;
     }
 
-    public void setAlipayUser(AlipayUser alipayUser) {
-        this.alipayUser = alipayUser;
+    public void setUser(User user) {
+        this.user = user;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

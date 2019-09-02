@@ -1,4 +1,4 @@
-import { IAlipayUserRs } from 'app/shared/model/alipay-user-rs.model';
+import { IUser } from 'app/core/user/user.model';
 
 export interface IShippingAddressRs {
   id?: number;
@@ -8,7 +8,7 @@ export interface IShippingAddressRs {
   city?: string;
   region?: string;
   address?: string;
-  alipayUser?: IAlipayUserRs;
+  user?: IUser;
 }
 
 export class ShippingAddressRs implements IShippingAddressRs {
@@ -20,6 +20,6 @@ export class ShippingAddressRs implements IShippingAddressRs {
     public city?: string,
     public region?: string,
     public address?: string,
-    public alipayUser?: IAlipayUserRs
+    public user?: IUser
   ) {}
 }
