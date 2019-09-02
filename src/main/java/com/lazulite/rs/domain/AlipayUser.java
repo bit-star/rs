@@ -5,8 +5,6 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * A AlipayUser.
@@ -63,14 +61,6 @@ public class AlipayUser implements Serializable {
 
     @Column(name = "refresh_token")
     private String refreshToken;
-
-    @OneToMany(mappedBy = "alipayUser")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Order> orders = new HashSet<>();
-
-    @OneToMany(mappedBy = "alipayUser")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<ShippingAddress> shippingAddresses = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -261,56 +251,6 @@ public class AlipayUser implements Serializable {
 
     public void setRefreshToken(String refreshToken) {
         this.refreshToken = refreshToken;
-    }
-
-    public Set<Order> getOrders() {
-        return orders;
-    }
-
-    public AlipayUser orders(Set<Order> orders) {
-        this.orders = orders;
-        return this;
-    }
-
-    public AlipayUser addOrder(Order order) {
-        this.orders.add(order);
-        order.setAlipayUser(this);
-        return this;
-    }
-
-    public AlipayUser removeOrder(Order order) {
-        this.orders.remove(order);
-        order.setAlipayUser(null);
-        return this;
-    }
-
-    public void setOrders(Set<Order> orders) {
-        this.orders = orders;
-    }
-
-    public Set<ShippingAddress> getShippingAddresses() {
-        return shippingAddresses;
-    }
-
-    public AlipayUser shippingAddresses(Set<ShippingAddress> shippingAddresses) {
-        this.shippingAddresses = shippingAddresses;
-        return this;
-    }
-
-    public AlipayUser addShippingAddress(ShippingAddress shippingAddress) {
-        this.shippingAddresses.add(shippingAddress);
-        shippingAddress.setAlipayUser(this);
-        return this;
-    }
-
-    public AlipayUser removeShippingAddress(ShippingAddress shippingAddress) {
-        this.shippingAddresses.remove(shippingAddress);
-        shippingAddress.setAlipayUser(null);
-        return this;
-    }
-
-    public void setShippingAddresses(Set<ShippingAddress> shippingAddresses) {
-        this.shippingAddresses = shippingAddresses;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

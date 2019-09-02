@@ -1,5 +1,5 @@
 import { IOrderItemRs } from 'app/shared/model/order-item-rs.model';
-import { IAlipayUserRs } from 'app/shared/model/alipay-user-rs.model';
+import { IUser } from 'app/core/user/user.model';
 
 export const enum OrderStatus {
   PendingPayment = 'PendingPayment',
@@ -33,7 +33,7 @@ export interface IOrderRs {
   description?: string;
   processingOpinions?: string;
   orderItems?: IOrderItemRs[];
-  alipayUser?: IAlipayUserRs;
+  user?: IUser;
 }
 
 export class OrderRs implements IOrderRs {
@@ -55,6 +55,6 @@ export class OrderRs implements IOrderRs {
     public description?: string,
     public processingOpinions?: string,
     public orderItems?: IOrderItemRs[],
-    public alipayUser?: IAlipayUserRs
+    public user?: IUser
   ) {}
 }

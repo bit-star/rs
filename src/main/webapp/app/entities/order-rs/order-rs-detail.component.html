@@ -65,11 +65,9 @@
                 <dd>
                     <span>{{order.processingOpinions}}</span>
                 </dd>
-                <dt><span jhiTranslate="rsApp.order.alipayUser">Alipay User</span></dt>
+                <dt><span jhiTranslate="rsApp.order.user">User</span></dt>
                 <dd>
-                    <div *ngIf="order.alipayUser">
-                        <a [routerLink]="['/alipay-user-rs', order.alipayUser?.id, 'view']">{{order.alipayUser?.id}}</a>
-                    </div>
+                    {{order.user?.id}}
                 </dd>
             </dl>
 

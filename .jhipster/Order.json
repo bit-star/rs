@@ -73,9 +73,9 @@
         },
         {
             "relationshipType": "many-to-one",
-            "otherEntityName": "alipayUser",
+            "otherEntityName": "user",
             "otherEntityRelationshipName": "order",
-            "relationshipName": "alipayUser",
+            "relationshipName": "user",
             "otherEntityField": "id"
         }
     ],

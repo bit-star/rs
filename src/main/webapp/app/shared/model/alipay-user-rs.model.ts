@@ -1,6 +1,3 @@
-import { IOrderRs } from 'app/shared/model/order-rs.model';
-import { IShippingAddressRs } from 'app/shared/model/shipping-address-rs.model';
-
 export interface IAlipayUserRs {
   id?: number;
   userId?: string;
@@ -17,8 +14,6 @@ export interface IAlipayUserRs {
   alipayUserId?: string;
   reExpiresIn?: string;
   refreshToken?: string;
-  orders?: IOrderRs[];
-  shippingAddresses?: IShippingAddressRs[];
 }
 
 export class AlipayUserRs implements IAlipayUserRs {
@@ -37,8 +32,6 @@ export class AlipayUserRs implements IAlipayUserRs {
     public expiresIn?: string,
     public alipayUserId?: string,
     public reExpiresIn?: string,
-    public refreshToken?: string,
-    public orders?: IOrderRs[],
-    public shippingAddresses?: IShippingAddressRs[]
+    public refreshToken?: string
   ) {}
 }

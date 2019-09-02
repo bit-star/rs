@@ -43,7 +43,7 @@ public class ShippingAddress implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("shippingAddresses")
-    private AlipayUser alipayUser;
+    private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -132,17 +132,17 @@ public class ShippingAddress implements Serializable {
         this.address = address;
     }
 
-    public AlipayUser getAlipayUser() {
-        return alipayUser;
+    public User getUser() {
+        return user;
     }
 
-    public ShippingAddress alipayUser(AlipayUser alipayUser) {
-        this.alipayUser = alipayUser;
+    public ShippingAddress user(User user) {
+        this.user = user;
         return this;
     }
 
-    public void setAlipayUser(AlipayUser alipayUser) {
-        this.alipayUser = alipayUser;
+    public void setUser(User user) {
+        this.user = user;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

@@ -41,10 +41,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rsApp.shippingAddress.alipayUser" for="field_alipayUser">Alipay User</label>
-                    <select class="form-control" id="field_alipayUser" name="alipayUser" formControlName="alipayUser">
+                    <label class="form-control-label" jhiTranslate="rsApp.shippingAddress.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="user">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="alipayUserOption.id === editForm.get('alipayUser').value?.id ? editForm.get('alipayUser').value : alipayUserOption" *ngFor="let alipayUserOption of alipayusers; trackBy: trackAlipayUserById">{{alipayUserOption.id}}</option>
+                        <option [ngValue]="userOption.id === editForm.get('user').value?.id ? editForm.get('user').value : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
                     </select>
                 </div>
             </div>

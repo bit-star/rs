@@ -33,7 +33,7 @@
             <th jhiSortBy="freight"><span jhiTranslate="rsApp.order.freight">Freight</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="description"><span jhiTranslate="rsApp.order.description">Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="processingOpinions"><span jhiTranslate="rsApp.order.processingOpinions">Processing Opinions</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="alipayUser.id"><span jhiTranslate="rsApp.order.alipayUser">Alipay User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="user.id"><span jhiTranslate="rsApp.order.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -56,9 +56,7 @@
                 <td>{{order.description}}</td>
                 <td>{{order.processingOpinions}}</td>
                 <td>
-                    <div *ngIf="order.alipayUser">
-                        <a [routerLink]="['/alipay-user-rs', order.alipayUser?.id, 'view' ]" >{{order.alipayUser?.id}}</a>
-                    </div>
+                    {{order.user?.id}}
                 </td>
                 <td class="text-right">
                     <div class="btn-group">

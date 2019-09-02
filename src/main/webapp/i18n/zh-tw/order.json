@@ -32,7 +32,7 @@
       "description": "Description",
       "processingOpinions": "Processing Opinions",
       "orderItem": "Order Item",
-      "alipayUser": "Alipay User",
+      "user": "User",
       "help": {
         "orderNo": "订单编号"
       }

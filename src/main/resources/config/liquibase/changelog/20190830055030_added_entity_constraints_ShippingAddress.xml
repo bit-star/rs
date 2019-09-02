@@ -8,11 +8,11 @@
     -->
     <changeSet id="20190830055030-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="alipay_user_id"
+        <addForeignKeyConstraint baseColumnNames="user_id"
                                  baseTableName="shipping_address"
-                                 constraintName="fk_shipping_address_alipay_user_id"
+                                 constraintName="fk_shipping_address_user_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="alipay_user"/>
+                                 referencedTableName="jhi_user"/>
 
     </changeSet>
 </databaseChangeLog>
