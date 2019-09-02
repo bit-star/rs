@@ -4,18 +4,12 @@
 entity ShippingAddress {
 	receiver String,
 	moblie String,
+    province String,
+    city String,
+    region String,
 	address String
 }
-/** 省市区 */
-entity Pcr {
-    name String,
-    parentId Long,
-    alias String,
-    level Long,
-    phoneAreaCode String,
-    zip Long,
-    pinyin String
-}
+
 
 entity Commodity {
 	name String,
@@ -30,7 +24,8 @@ entity Commodity {
     deliveryMethod DeliveryMethod,
     status CommodityStatus,
     leaseMustRead String,
-    desciption String
+    desciption String,
+    
     // 1-* Photo
     // 1-* Specification
     // * -1 Category
@@ -46,7 +41,8 @@ entity Photo {
   originalImage String,
   thumbnail String,
   width Long,
-  height Long
+  height Long,
+  rankOrder Long
 }
 
 entity Specification {
@@ -185,7 +181,6 @@ relationship OneToMany {
 
 relationship ManyToOne {
 	OrderItem to Commodity,
-    ShippingAddress to Pcr,
     Commodity to Category
 }
 
