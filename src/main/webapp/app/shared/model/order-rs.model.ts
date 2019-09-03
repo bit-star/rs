@@ -1,4 +1,6 @@
 import { IOrderItemRs } from 'app/shared/model/order-item-rs.model';
+import { IAlipayFreezeRequestRs } from 'app/shared/model/alipay-freeze-request-rs.model';
+import { IAlipayFreezeResponseRs } from 'app/shared/model/alipay-freeze-response-rs.model';
 import { IUser } from 'app/core/user/user.model';
 
 export const enum OrderStatus {
@@ -33,6 +35,8 @@ export interface IOrderRs {
   description?: string;
   processingOpinions?: string;
   orderItems?: IOrderItemRs[];
+  alipayFreezeRequests?: IAlipayFreezeRequestRs[];
+  alipayFreezeResponses?: IAlipayFreezeResponseRs[];
   user?: IUser;
 }
 
@@ -55,6 +59,8 @@ export class OrderRs implements IOrderRs {
     public description?: string,
     public processingOpinions?: string,
     public orderItems?: IOrderItemRs[],
+    public alipayFreezeRequests?: IAlipayFreezeRequestRs[],
+    public alipayFreezeResponses?: IAlipayFreezeResponseRs[],
     public user?: IUser
   ) {}
 }

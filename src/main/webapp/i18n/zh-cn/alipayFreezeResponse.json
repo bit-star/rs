@@ -1,0 +1,33 @@
+{
+  "rsApp": {
+    "alipayFreezeResponse": {
+      "home": {
+        "title": "Alipay Freeze Responses",
+        "createLabel": "创建新 Alipay Freeze Response",
+        "createOrEditLabel": "创建或编辑 Alipay Freeze Response",
+        "notFound": "No Alipay Freeze Responses found"
+      },
+      "created": "Alipay Freeze Response {{ param }} 创建成功",
+      "updated": "Alipay Freeze Response {{ param }} 更新成功",
+      "deleted": "Alipay Freeze Response {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Alipay Freeze Response {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Alipay Freeze Response"
+      },
+      "amount": "Amount",
+      "authNo": "Auth No",
+      "creditAmount": "Credit Amount",
+      "fundAmount": "Fund Amount",
+      "gmtTrans": "Gmt Trans",
+      "operationId": "Operation Id",
+      "outOrderNo": "Out Order No",
+      "outRequestNo": "Out Request No",
+      "payerUserId": "Payer User Id",
+      "preAuthType": "Pre Auth Type",
+      "status": "Status",
+      "order": "Order"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="alipayFreezeResponse">
+            <h2><span jhiTranslate="rsApp.alipayFreezeResponse.detail.title">Alipay Freeze Response</span> {{alipayFreezeResponse.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rsApp.alipayFreezeResponse.amount">Amount</span></dt>
+                <dd>
+                    <span>{{alipayFreezeResponse.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.alipayFreezeResponse.authNo">Auth No</span></dt>
+                <dd>
+                    <span>{{alipayFreezeResponse.authNo}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.alipayFreezeResponse.creditAmount">Credit Amount</span></dt>
+                <dd>
+                    <span>{{alipayFreezeResponse.creditAmount}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.alipayFreezeResponse.fundAmount">Fund Amount</span></dt>
+                <dd>
+                    <span>{{alipayFreezeResponse.fundAmount}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.alipayFreezeResponse.gmtTrans">Gmt Trans</span></dt>
+                <dd>
+                    <span>{{alipayFreezeResponse.gmtTrans}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.alipayFreezeResponse.operationId">Operation Id</span></dt>
+                <dd>
+                    <span>{{alipayFreezeResponse.operationId}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.alipayFreezeResponse.outOrderNo">Out Order No</span></dt>
+                <dd>
+                    <span>{{alipayFreezeResponse.outOrderNo}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.alipayFreezeResponse.outRequestNo">Out Request No</span></dt>
+                <dd>
+                    <span>{{alipayFreezeResponse.outRequestNo}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.alipayFreezeResponse.payerUserId">Payer User Id</span></dt>
+                <dd>
+                    <span>{{alipayFreezeResponse.payerUserId}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.alipayFreezeResponse.preAuthType">Pre Auth Type</span></dt>
+                <dd>
+                    <span>{{alipayFreezeResponse.preAuthType}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.alipayFreezeResponse.status">Status</span></dt>
+                <dd>
+                    <span>{{alipayFreezeResponse.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="rsApp.alipayFreezeResponse.order">Order</span></dt>
+                <dd>
+                    <div *ngIf="alipayFreezeResponse.order">
+                        <a [routerLink]="['/order-rs', alipayFreezeResponse.order?.id, 'view']">{{alipayFreezeResponse.order?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/alipay-freeze-response-rs', alipayFreezeResponse.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

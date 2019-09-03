@@ -18,6 +18,8 @@
         "alipayUserRs": "Alipay User",
         "tagRs": "Tag",
         "categoryRs": "Category",
+        "alipayFreezeRequestRs": "Alipay Freeze Request",
+        "alipayFreezeResponseRs": "Alipay Freeze Response",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

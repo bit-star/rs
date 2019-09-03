@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="rsApp.alipayFreezeResponse.home.title">Alipay Freeze Responses</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-alipay-freeze-response-rs" [routerLink]="['/alipay-freeze-response-rs/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="rsApp.alipayFreezeResponse.home.createLabel">
+            Create a new Alipay Freeze Response
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="alipayFreezeResponses?.length === 0">
+        <span jhiTranslate="rsApp.alipayFreezeResponse.home.notFound">No alipayFreezeResponses found</span>
+    </div>
+    <div class="table-responsive" *ngIf="alipayFreezeResponses?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="amount"><span jhiTranslate="rsApp.alipayFreezeResponse.amount">Amount</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="authNo"><span jhiTranslate="rsApp.alipayFreezeResponse.authNo">Auth No</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="creditAmount"><span jhiTranslate="rsApp.alipayFreezeResponse.creditAmount">Credit Amount</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fundAmount"><span jhiTranslate="rsApp.alipayFreezeResponse.fundAmount">Fund Amount</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="gmtTrans"><span jhiTranslate="rsApp.alipayFreezeResponse.gmtTrans">Gmt Trans</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="operationId"><span jhiTranslate="rsApp.alipayFreezeResponse.operationId">Operation Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outOrderNo"><span jhiTranslate="rsApp.alipayFreezeResponse.outOrderNo">Out Order No</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outRequestNo"><span jhiTranslate="rsApp.alipayFreezeResponse.outRequestNo">Out Request No</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="payerUserId"><span jhiTranslate="rsApp.alipayFreezeResponse.payerUserId">Payer User Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="preAuthType"><span jhiTranslate="rsApp.alipayFreezeResponse.preAuthType">Pre Auth Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="status"><span jhiTranslate="rsApp.alipayFreezeResponse.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="order.id"><span jhiTranslate="rsApp.alipayFreezeResponse.order">Order</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let alipayFreezeResponse of alipayFreezeResponses ;trackBy: trackId">
+                <td><a [routerLink]="['/alipay-freeze-response-rs', alipayFreezeResponse.id, 'view' ]">{{alipayFreezeResponse.id}}</a></td>
+                <td>{{alipayFreezeResponse.amount}}</td>
+                <td>{{alipayFreezeResponse.authNo}}</td>
+                <td>{{alipayFreezeResponse.creditAmount}}</td>
+                <td>{{alipayFreezeResponse.fundAmount}}</td>
+                <td>{{alipayFreezeResponse.gmtTrans}}</td>
+                <td>{{alipayFreezeResponse.operationId}}</td>
+                <td>{{alipayFreezeResponse.outOrderNo}}</td>
+                <td>{{alipayFreezeResponse.outRequestNo}}</td>
+                <td>{{alipayFreezeResponse.payerUserId}}</td>
+                <td>{{alipayFreezeResponse.preAuthType}}</td>
+                <td>{{alipayFreezeResponse.status}}</td>
+                <td>
+                    <div *ngIf="alipayFreezeResponse.order">
+                        <a [routerLink]="['/order-rs', alipayFreezeResponse.order?.id, 'view' ]" >{{alipayFreezeResponse.order?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/alipay-freeze-response-rs', alipayFreezeResponse.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/alipay-freeze-response-rs', alipayFreezeResponse.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/alipay-freeze-response-rs', { outlets: { popup: alipayFreezeResponse.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="alipayFreezeResponses?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

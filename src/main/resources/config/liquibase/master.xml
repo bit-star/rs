@@ -25,6 +25,8 @@
     <include file="config/liquibase/changelog/20190830055038_added_entity_AlipayUser.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190830055039_added_entity_Tag.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190831133441_added_entity_Category.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190903144734_added_entity_AlipayFreezeRequest.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190903144735_added_entity_AlipayFreezeResponse.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20190830055030_added_entity_constraints_ShippingAddress.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190830055033_added_entity_constraints_Photo.xml" relativeToChangelogFile="false"/>
@@ -34,5 +36,7 @@
     <include file="config/liquibase/changelog/20190830055037_added_entity_constraints_ItemLeaseCycle.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190830055039_added_entity_constraints_Tag.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190830055032_added_entity_constraints_Commodity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190903144734_added_entity_constraints_AlipayFreezeRequest.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190903144735_added_entity_constraints_AlipayFreezeResponse.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

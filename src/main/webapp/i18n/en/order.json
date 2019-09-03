@@ -32,6 +32,8 @@
       "description": "Description",
       "processingOpinions": "Processing Opinions",
       "orderItem": "Order Item",
+      "alipayFreezeRequest": "Alipay Freeze Request",
+      "alipayFreezeResponse": "Alipay Freeze Response",
       "user": "User",
       "help": {
         "orderNo": "订单编号"
