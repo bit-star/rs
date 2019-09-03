@@ -1,0 +1,30 @@
+{
+  "rsApp": {
+    "alipayFundAuthOrderAppFreezeModel": {
+      "home": {
+        "title": "Alipay Fund Auth Order App Freeze Models",
+        "createLabel": "建立一筆新的 Alipay Fund Auth Order App Freeze Model",
+        "createOrEditLabel": "建立或編輯 Alipay Fund Auth Order App Freeze Model",
+        "notFound": "No Alipay Fund Auth Order App Freeze Models found"
+      },
+      "created": "新的 Alipay Fund Auth Order App Freeze Model 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Alipay Fund Auth Order App Freeze Model 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Alipay Fund Auth Order App Freeze Model 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Alipay Fund Auth Order App Freeze Model {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Alipay Fund Auth Order App Freeze Model"
+      },
+      "orderTitle": "Order Title",
+      "outOrderNo": "Out Order No",
+      "outRequestNo": "Out Request No",
+      "payeeUserId": "Payee User Id",
+      "payeeLogonId": "Payee Logon Id",
+      "productCode": "Product Code",
+      "amount": "Amount",
+      "extraParam": "Extra Param",
+      "notifyUrl": "Notify Url"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "rsApp": {
+    "alipayFundAuthOrderAppFreezeResponse": {
+      "home": {
+        "title": "Alipay Fund Auth Order App Freeze Responses",
+        "createLabel": "创建新 Alipay Fund Auth Order App Freeze Response",
+        "createOrEditLabel": "创建或编辑 Alipay Fund Auth Order App Freeze Response",
+        "notFound": "No Alipay Fund Auth Order App Freeze Responses found"
+      },
+      "created": "Alipay Fund Auth Order App Freeze Response {{ param }} 创建成功",
+      "updated": "Alipay Fund Auth Order App Freeze Response {{ param }} 更新成功",
+      "deleted": "Alipay Fund Auth Order App Freeze Response {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Alipay Fund Auth Order App Freeze Response {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Alipay Fund Auth Order App Freeze Response"
+      },
+      "amount": "Amount",
+      "authNo": "Auth No",
+      "creditAmount": "Credit Amount",
+      "fundAmount": "Fund Amount",
+      "gmtTrans": "Gmt Trans",
+      "operationId": "Operation Id",
+      "outOrderNo": "Out Order No",
+      "outRequestNo": "Out Request No",
+      "payerUserId": "Payer User Id",
+      "preAuthType": "Pre Auth Type",
+      "status": "Status"
+    }
+  }
+}
