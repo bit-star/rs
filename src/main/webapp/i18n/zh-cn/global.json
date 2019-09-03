@@ -18,6 +18,8 @@
         "alipayUserRs": "Alipay User",
         "tagRs": "Tag",
         "categoryRs": "Category",
+        "alipayFundAuthOrderAppFreezeModelRs": "Alipay Fund Auth Order App Freeze Model",
+        "alipayFundAuthOrderAppFreezeResponseRs": "Alipay Fund Auth Order App Freeze Response",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
