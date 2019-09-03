@@ -1,4 +1,34 @@
 
+
+entity AlipayFreezeRequest{
+    orderTitle String,
+    outOrderNo String,
+    outRequestNo String,
+    payeeUserId String,
+    payeeLogonId String,
+    productCode String,
+    amount String,
+    extraParam String,
+    notifyUrl String
+}
+
+entity AlipayFreezeResponse{
+	amount String,
+    authNo String,
+    creditAmount String,
+    fundAmount String,
+    gmtTrans String,
+    operationId String,
+    outOrderNo String,
+    outRequestNo String,
+    payerUserId String,
+    preAuthType String,
+    status String
+}
+
+
+
+
 // an ignored comment
 /** not an ignored comment */
 entity ShippingAddress {
@@ -174,7 +204,11 @@ relationship OneToMany {
     
     Commodity to Specification,
     
-    Commodity to Tag
+    Commodity to Tag,
+    
+    Order to AlipayFreezeRequest,
+     
+    Order to AlipayFreezeResponse
 }
 
 relationship ManyToOne {
