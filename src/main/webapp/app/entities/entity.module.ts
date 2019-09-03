@@ -47,20 +47,6 @@ import { RouterModule } from '@angular/router';
       {
         path: 'category-rs',
         loadChildren: () => import('./category-rs/category-rs.module').then(m => m.RsCategoryRsModule)
-      },
-      {
-        path: 'alipay-fund-auth-order-app-freeze-model-rs',
-        loadChildren: () =>
-          import('./alipay-fund-auth-order-app-freeze-model-rs/alipay-fund-auth-order-app-freeze-model-rs.module').then(
-            m => m.RsAlipayFundAuthOrderAppFreezeModelRsModule
-          )
-      },
-      {
-        path: 'alipay-fund-auth-order-app-freeze-response-rs',
-        loadChildren: () =>
-          import('./alipay-fund-auth-order-app-freeze-response-rs/alipay-fund-auth-order-app-freeze-response-rs.module').then(
-            m => m.RsAlipayFundAuthOrderAppFreezeResponseRsModule
-          )
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])
