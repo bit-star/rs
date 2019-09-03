@@ -47,6 +47,15 @@ import { RouterModule } from '@angular/router';
       {
         path: 'category-rs',
         loadChildren: () => import('./category-rs/category-rs.module').then(m => m.RsCategoryRsModule)
+      },
+      {
+        path: 'alipay-freeze-request-rs',
+        loadChildren: () => import('./alipay-freeze-request-rs/alipay-freeze-request-rs.module').then(m => m.RsAlipayFreezeRequestRsModule)
+      },
+      {
+        path: 'alipay-freeze-response-rs',
+        loadChildren: () =>
+          import('./alipay-freeze-response-rs/alipay-freeze-response-rs.module').then(m => m.RsAlipayFreezeResponseRsModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])

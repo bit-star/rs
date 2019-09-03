@@ -72,6 +72,18 @@
             "relationshipName": "orderItem"
         },
         {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "alipayFreezeRequest",
+            "otherEntityRelationshipName": "order",
+            "relationshipName": "alipayFreezeRequest"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "alipayFreezeResponse",
+            "otherEntityRelationshipName": "order",
+            "relationshipName": "alipayFreezeResponse"
+        },
+        {
             "relationshipType": "many-to-one",
             "otherEntityName": "user",
             "otherEntityRelationshipName": "order",

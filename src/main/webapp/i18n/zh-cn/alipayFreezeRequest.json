@@ -1,0 +1,31 @@
+{
+  "rsApp": {
+    "alipayFreezeRequest": {
+      "home": {
+        "title": "Alipay Freeze Requests",
+        "createLabel": "创建新 Alipay Freeze Request",
+        "createOrEditLabel": "创建或编辑 Alipay Freeze Request",
+        "notFound": "No Alipay Freeze Requests found"
+      },
+      "created": "Alipay Freeze Request {{ param }} 创建成功",
+      "updated": "Alipay Freeze Request {{ param }} 更新成功",
+      "deleted": "Alipay Freeze Request {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Alipay Freeze Request {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Alipay Freeze Request"
+      },
+      "orderTitle": "Order Title",
+      "outOrderNo": "Out Order No",
+      "outRequestNo": "Out Request No",
+      "payeeUserId": "Payee User Id",
+      "payeeLogonId": "Payee Logon Id",
+      "productCode": "Product Code",
+      "amount": "Amount",
+      "extraParam": "Extra Param",
+      "notifyUrl": "Notify Url",
+      "order": "Order"
+    }
+  }
+}

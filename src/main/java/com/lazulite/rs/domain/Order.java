@@ -81,6 +81,14 @@ public class Order implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<OrderItem> orderItems = new HashSet<>();
 
+    @OneToMany(mappedBy = "order")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<AlipayFreezeRequest> alipayFreezeRequests = new HashSet<>();
+
+    @OneToMany(mappedBy = "order")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<AlipayFreezeResponse> alipayFreezeResponses = new HashSet<>();
+
     @ManyToOne
     @JsonIgnoreProperties("orders")
     private User user;
@@ -312,6 +320,56 @@ public class Order implements Serializable {
 
     public void setOrderItems(Set<OrderItem> orderItems) {
         this.orderItems = orderItems;
+    }
+
+    public Set<AlipayFreezeRequest> getAlipayFreezeRequests() {
+        return alipayFreezeRequests;
+    }
+
+    public Order alipayFreezeRequests(Set<AlipayFreezeRequest> alipayFreezeRequests) {
+        this.alipayFreezeRequests = alipayFreezeRequests;
+        return this;
+    }
+
+    public Order addAlipayFreezeRequest(AlipayFreezeRequest alipayFreezeRequest) {
+        this.alipayFreezeRequests.add(alipayFreezeRequest);
+        alipayFreezeRequest.setOrder(this);
+        return this;
+    }
+
+    public Order removeAlipayFreezeRequest(AlipayFreezeRequest alipayFreezeRequest) {
+        this.alipayFreezeRequests.remove(alipayFreezeRequest);
+        alipayFreezeRequest.setOrder(null);
+        return this;
+    }
+
+    public void setAlipayFreezeRequests(Set<AlipayFreezeRequest> alipayFreezeRequests) {
+        this.alipayFreezeRequests = alipayFreezeRequests;
+    }
+
+    public Set<AlipayFreezeResponse> getAlipayFreezeResponses() {
+        return alipayFreezeResponses;
+    }
+
+    public Order alipayFreezeResponses(Set<AlipayFreezeResponse> alipayFreezeResponses) {
+        this.alipayFreezeResponses = alipayFreezeResponses;
+        return this;
+    }
+
+    public Order addAlipayFreezeResponse(AlipayFreezeResponse alipayFreezeResponse) {
+        this.alipayFreezeResponses.add(alipayFreezeResponse);
+        alipayFreezeResponse.setOrder(this);
+        return this;
+    }
+
+    public Order removeAlipayFreezeResponse(AlipayFreezeResponse alipayFreezeResponse) {
+        this.alipayFreezeResponses.remove(alipayFreezeResponse);
+        alipayFreezeResponse.setOrder(null);
+        return this;
+    }
+
+    public void setAlipayFreezeResponses(Set<AlipayFreezeResponse> alipayFreezeResponses) {
+        this.alipayFreezeResponses = alipayFreezeResponses;
     }
 
     public User getUser() {

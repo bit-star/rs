@@ -64,6 +64,10 @@ public class CacheConfiguration {
             createCache(cm, com.lazulite.rs.domain.Tag.class.getName());
             createCache(cm, com.lazulite.rs.domain.Category.class.getName());
             createCache(cm, com.lazulite.rs.domain.Category.class.getName() + ".commodities");
+            createCache(cm, com.lazulite.rs.domain.AlipayFreezeRequest.class.getName());
+            createCache(cm, com.lazulite.rs.domain.AlipayFreezeResponse.class.getName());
+            createCache(cm, com.lazulite.rs.domain.Order.class.getName() + ".alipayFreezeRequests");
+            createCache(cm, com.lazulite.rs.domain.Order.class.getName() + ".alipayFreezeResponses");
             // jhipster-needle-ehcache-add-entry
         };
     }
